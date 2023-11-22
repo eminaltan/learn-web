@@ -1,5 +1,5 @@
-## Ignored Files
-*.md
-*.css
-*.html
-*.js
+## Ignored Directories
+
+TR/CSS/*.md
+TR/JavaScript/*.md
+EN/CSS/*.md

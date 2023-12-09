@@ -1,5 +1,4 @@
 ## Ignored Directories
 
-TR/CSS/*.md
-TR/JavaScript/*.md
-EN/CSS/*.md
+TR/**/*.md
+CSS/**/*.md

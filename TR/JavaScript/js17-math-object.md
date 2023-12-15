@@ -6,7 +6,7 @@ Yazıda:
 
 - Math nesnesinin özelliklerine
 
-- Math nesnenin içerisindeki property ve metotlara eriş sağlayarak kullanmayı
+- Math nesnenin içerisindeki property ve metotlara erişim sağlayarak kullanmayı
 
 - Math nesnesi içerisindeki property ve metotların ne işe yaradıklarına
 

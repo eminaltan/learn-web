@@ -6,8 +6,8 @@ Bu repo web teknolojilerini öğrenmek isteyen arkadaşlar için kılavuz olmas�
 
 Temelde 3 tür dizin vardır:
 
-- learn-web/dist: Okuyucu ilgilendiği içeriklere bu tür dosyalardan erişebilir. İçerikler Markdown türündeki dosyalardan oluşur.
+- learn-web/dist: Okuyucu ilgilendiği içeriklere bu tür dosyalardan erişebilir. Içerikler Markdown türündeki dosyalardan oluşur.
 
-- learn-web/source: Kaynak dosylarını barındırır. İçerikler Python Notebook türündeki dosyalardan oluşur.
+- learn-web/source: Kaynak dosyalarını barındırır. Içerikler Python Notebook türündeki dosyalardan oluşur.
 
 - learn-web/archive: Dizin arşiv dosyalarından oluşur.

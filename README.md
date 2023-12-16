@@ -1,3 +1,3 @@
 # Giriş
 
-B
+Bu repo 

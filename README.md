@@ -1,3 +1,3 @@
 # Giriş
 
-Bu repo web tek
+Bu repo web teknolojilerini öğrenmek isteyen arka

@@ -1,3 +1,3 @@
 # Giriş
 
-Bu repo web teknolojilerini öğrenmek isteyen arka
+Bu repo web teknolojilerini öğrenmek isteyen arkadaşlar için kılavuz 

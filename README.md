@@ -1,3 +1,3 @@
 # Giriş
 
-Bu repo 
+Bu repo web tek

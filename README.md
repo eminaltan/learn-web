@@ -1,13 +1,13 @@
-# Giriş
+# Introduction
 
-Bu repo web teknolojilerini öğrenmek isteyen arkadaşlar için kılavuz olması amacıyla oluşturulmuştur. Repo içerisinde her teknoloji kendi adında bir dizine sahiptir. Örneğin Türkçe JavaScript hakkında içeriklere learn-web/dist/TR/JavaScript dizininden ulaşılabilir.
+This repo created for who want to learn web technologies such as JavaScript. Each directory named as own tech name. For example If want to read JavaScript media you can fallow learn-web/dist/EN/JavaScript directory path.
 
-## Dizin Yapısı
+### Directory Structure
 
-Temelde 3 tür dizin vardır:
+This repo consist of basically three directories:
 
-- learn-web/dist: Okuyucu ilgilendiği içeriklere bu tür dosyalardan erişebilir. Içerikler Markdown türündeki dosyalardan oluşur.
+- learn-web/dist/EN: Reader can reach and read interest of subject use on this path. Contents consist of Markdown files.
 
-- learn-web/source: Kaynak dosyalarını barındırır. Içerikler Python Notebook türündeki dosyalardan oluşur.
+- learn-web/source/EN: This directory contains of source files. Contents consist of Python Notebook files.
 
-- learn-web/archive: Dizin arşiv dosyalarından oluşur.
+- learn-web/archive: This directory consist of archive files.

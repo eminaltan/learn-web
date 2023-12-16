@@ -11,5 +11,3 @@ Temelde 3 tür dizin vardır:
 - learn-web/source/TR: Kaynak dosyalarını barındırır. Içerikler Python Notebook türündeki dosyalardan oluşur.
 
 - learn-web/archive: Dizin arşiv dosyalarından oluşur.
-
----

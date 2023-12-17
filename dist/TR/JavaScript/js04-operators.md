@@ -4,30 +4,29 @@ Merhaba arkadaşlar bu yazıda JavaScript'de operatörlere ve en çok kullanıla
 
 Yazıda:
 
-- Operatör ve operand kavramına.
+- Operatör ve operand kavramına
 
-- JavaScript operatörlerine.
+- JavaScript operatörlerine
 
-- Aritmetiksel (Arithmetic) operatörlere.
+- Aritmetiksel (Arithmetic) operatörlere
 
-- Atama (Assignment) operatörlerine.
+- Atama (Assignment) operatörlerine
 
-- Kıyaslama (Comparison) operatörlerine.
+- Kıyaslama (Comparison) operatörlerine
 
-- String operatörlere.
+- String operatörlere
 
-- Mantıksal (Logical) operatörlere.
+- Mantıksal (Logical) operatörlere
 
-- Bit türündeki (Bitwise) operatörlere.
+- Bit türündeki (Bitwise) operatörlere
 
-- Type operatörlerine.
+- Type operatörlerine
 
-- Operatör öncelliğine.
+- Operatör öncelliğine
 
 Değineceğim.
 
 İyi okumalar dilerim.
-
 
 ## Operator ve Operand Kavramları
 
@@ -35,29 +34,27 @@ Bir JavaScript expression'da değerlere **_operand_** ve operand'lar arasında i
 
 ![Operand ve operatör örneği](https://www.oreilly.com/api/v2/epubs/0596101104/files/httpatomoreillycomsourceoreillyimages108816.png "Operand ve operatörler")
 
-
 ## JavaScript Operatörleri
 
 Operatörleri matematiksel işlemlerden bir script'in çalışma akışını değiştirmeye kadar çeşitli işlemlerde kullanırız. Diğer programlama dillerinde olduğu gibi JavaScript içerisinde bir çok operatör vardır.
 
 JavaScript'de operatörler aşağıdaki gibi listelenebilir:
 
-1. Aritmetik (Arithmetic) operatörleri.
+1. Aritmetik (Arithmetic) operatörleri
 
-2. Atama (Assignment) operatörleri.
+2. Atama (Assignment) operatörleri
 
-3. Kıyaslama (Comparison) operatörleri.
+3. Kıyaslama (Comparison) operatörleri
 
-4. String operatörler.
+4. String operatörler
 
-5. Mantıksal (Logical) operatörler.
+5. Mantıksal (Logical) operatörler
 
-6. Bit türündeki (Bitwise) operatörler.
+6. Bit türündeki (Bitwise) operatörler
 
-7. Type operatörler.
+7. Type operatörler
 
 Şimdi bunları tek tek inceleyelim arkadaşlar.
-
 
 ## JavaScript Aritmetik Operatörleri
 
@@ -80,8 +77,6 @@ Aritmetiksel operatörlerde literal türündeki değerler de kullanılabilir.
 
 **Örnek**
 
-
-
 ```javascript
 %%javascript
 
@@ -95,17 +90,13 @@ console.log(x);
 
     225
 
-
 Şimdi de bazı aritmetiksel operatörlere değinelim. Örneklerde sıkça görebileceğiniz için toplama ve çıkarma gibi operatörleri es geçiyorum.
-
 
 ### `**` Üs Alma Operatörü
 
 Bir sayının üssünü almak için kullanılır.
 
 **Örnek**
-
-
 
 ```javascript
 %%javascript
@@ -129,14 +120,11 @@ console.log(result2);
     25
     125
 
-
 ### `%` Modul Operatörü
 
 Bazen bir bölme işleminin sonucunda kalan değeri tam sayı olarak almak isteyebiliriz bu durumda modul operatörü kullanılır.
 
 **Örnek**
-
-
 
 ```javascript
 %%javascript
@@ -148,37 +136,64 @@ console.log(9 % 4);
 
     1
 
-
 ### `++` Operatörü
 
 JavaScript' de bir değişkenin değerini +1 olarak artırma yöntemi olarak `++` operatörünü alternatif olarak kullanabiliriz.
 
+Kullanım şekli ikiye ayrılır:
+
+- Ön artırım operatörü olarak kullanım
+
+- Son artırım operatörü olarak kullanım
+
+Bu yöntemleri birer örnek ile inceleyelim arkadaşlar.
+
+Aşağıdaki örnekte ön artırım yöntemi görülüyor. `x` değişkeni önce +1 değer artırılacak ve sonrasında matematiksel işlemelere dahil edilecektir.
+
 **Örnek**
-
-
 
 ```javascript
 %%javascript
 
 let x = 5;
 
-x++;
-
-// x değişkeni yeni değer olarak 6 rakamını depolayacaktır.
-console.log(x);
-
+/**
+ * x değeri önce +1 artırılacak ve sonrasında matematiksel işleme dahil edilecektir. Bu
+ * durumdaki x'in değeri 6'dır.
+ */
+console.log(`İşlemin sonucu: ${7 + ++x}'dür.`);
 ```
 
-    6
+    İşlemin sonucu: 13'dür.
 
+Aşağıdaki örnekte ise son artırım yöntemi görülüyor. `x` değişkeni önce **kullanılacak** sonrasında değeri +1 olacak şekilde artırılacaktır.
+
+Dikkat ederseniz `x` değişkeni son artırım işlemi yapıldıktan sonra ta ki bir sonraki satırda kullanılana kadar aynı kalıyor.
+
+**Örnek**
+
+```javascript
+%%javascript
+
+let x = 5;
+
+/**
+ * x değeri önce kullanılacak ve sonrasında değeri +1 şeklinde artırılacaktır. Aşağıdaki
+ * satırda x'in değeri 5'dir.
+ */
+console.log(`İşlemin sonucu: ${7 + x++}'dir.`);
+
+console.log(`x'in tekrar çağrıldığında değeri: ${x} olacaktır.`);
+```
+
+    İşlemin sonucu: 12'dir.
+    x'in tekrar çağrıldığında değeri: 6 olacaktır.
 
 ### `--` Operatörü
 
 JavaScript' de bir değişkenin değerini -1 olarak azaltma yöntemi olarak `--` operatörünü alternatif olarak kullanabiliriz.
 
 **Örnek**
-
-
 
 ```javascript
 %%javascript
@@ -193,14 +208,11 @@ console.log(x);
 
     9
 
-
 ### Operatör Öncelliği
 
 JavaScript'de işlem öncelliği matematikte olduğu gibidir. **Bazen işlem önceliğini kendimiz ayarlamak isteriz bu durumda öncelik vermek istediğimiz expression'ları parantez içerisine alırız.**
 
 **Örnek**
-
-
 
 ```javascript
 %%javascript
@@ -219,12 +231,9 @@ console.log((20 + 30) * 2);
     80
     100
 
-
 **⚠️ Bir expression'da aynı seviyeden operatörler bulunması halinde işlem önceliği soldan sağa şeklinde olacak ve sonuç bu pattern'e göre oluşturulacaktır. Aynı zamanda bu JavaScript'in varsayılan davranışıdır.**
 
 **Örnek**
-
-
 
 ```javascript
 %%javascript
@@ -238,12 +247,11 @@ console.log(x);
 
     19
 
-
 ## JavaScript Atama Operatörleri
 
 Atama operatörleri bir değişkene veri atamak için kullanılır.
 
-**⚠️ JavaScript'de temelde atama operatörü olarak `=` işareti kullanılır. Eşittir işareti olarak `==` veya `===` ifadelerinden faydalanırız. Bu ifadelerde [Javascript Kıyaslama Operatörleri](#javascript-kıyaslama-operatörleri) başlığı altında değineceğim çünkü bu operatörler kıyaslama işlemleri için kullanılırlar.**
+**⚠️ JavaScript'de temelde atama operatörü olarak `=` işareti kullanılır. Eşittir işareti olarak `==` veya `===` ifadelerinden faydalanırız. Bu ifadelerde [Javascript Kıyaslama Operatörleri](https://gist.github.com/eminaltan/970d0a5dd7ab2375744833f08a19c3d0#javascript-k%C4%B1yaslama-operat%C3%B6rleri) başlığı altında değineceğim çünkü bu operatörler kıyaslama işlemleri için kullanılırlar.**
 
 JavaScript'deki atama operatörlerini listeleyecek olursak:
 
@@ -260,8 +268,6 @@ JavaScript'deki atama operatörlerini listeleyecek olursak:
 Bir örnekle nasıl kullanıldığını görelim. Diğer operatörler de benzer mantıkla çalışır.
 
 **Örnek**
-
-
 
 ```javascript
 %%javascript
@@ -288,7 +294,6 @@ console.log(z);
     125
     Selam Dostum
 
-
 ## JavaScript Kıyaslama Operatörleri
 
 Kıyaslama operatörleri iki veya daha fazla değişkeni kıyaslamak için kullanılır. Özellikle conditional statement'ler ile birlikte iki veya daha fazla değişkenin birbiriyle durumunu sorgulayarak ve program akışını değiştirmek için kullanılır.
@@ -311,14 +316,11 @@ Kıyaslama operatörlerini listelersek:
 
 Burada önemli olduğunu düşündüğüm operatörlere değineceğim. Diğer operatörleri örnekleri gördükçe ne işe yaradığını hemen anlayabilirsiniz.
 
-
 **❗ Nasıl armut ile elmayı kıyaslayamıyorsak JavaScript'de de kıyaslanacak değişkenlerin aynı türde olması gerekir. Aksi taktirde kıyaslama sonucunda anlam veremediğimiz sorunlar ile karşılaşabiliriz. değişkenleri birbirine dönüştürmek için JavaScript bir takım metotları içerisinde barındırır fakat konu kapsamında olmadığından ötürü bu metotlara değinmiyorum.**
 
 **İstisna olarak sayısal özelliğe sahip veri tipi string olan bir değişken ile number veri tipine sahip bir değişken kıyaslandığında JavaScript otomatik olarak string veri tipine sahip değişkeni sayısal değere çevirir ve kıyaslama işlemini gerçekleştirir.**
 
 **Örnek**
-
-
 
 ```javascript
 %%javascript
@@ -333,12 +335,9 @@ console.log(x == y);
 
     true
 
-
 **⚠️ String değerler alfabetik olarak kıyaslanır. İki sayısal string kıyaslandığında bazen sonuç istediğimiz gibi üretilmez. Örnek üzerinden açıklayalım.**
 
 **Örnek**
-
-
 
 ```javascript
 %%javascript
@@ -349,7 +348,7 @@ console.log(x == y);
  * JavaScript string türde sayısal değer içeren iki değişkeni kıyaslarken 32 rakamının ilk rakamına
  * bakarak alfabetik şekilde değerlendirme yapacaktır.
  * 3 rakamı 4 rakamından küçük olduğu için sonuç false olacaktır.
- * 
+ *
  * Konsola "false" ifadesi yazdırılır.
  */
 console.log("4" < "32");
@@ -358,14 +357,11 @@ console.log("4" < "32");
 
     false
 
-
 ### `==` Operatörü
 
 iki veya daha fazla değişkenin depoladığı verileri **içeriği** bakımından kıyaslar. **Kıyaslama sonucu doğru ise `true`, değilse `false` olacak şekilde değer döndürür.**
 
 **Örnek**
-
-
 
 ```javascript
 %%javascript
@@ -387,14 +383,11 @@ console.log(m == n);
     true
     false
 
-
 ### `===` Operatörü
 
 iki veya daha fazla değişkenin depoladığı verileri **içeriği ve veri tipi** bakımından kıyaslar. **Kıyaslama sonucu doğru ise `true`, değilse `false` olacak şekilde değer döndürür.**
 
 **Örnek**
-
-
 
 ```javascript
 %%javascript
@@ -402,8 +395,8 @@ iki veya daha fazla değişkenin depoladığı verileri **içeriği ve veri tipi
 const x = 5;
 const y = 5;
 
-/** 
- * x ile y değişkeni kıyaslanacak aynı veriyi ve veri tipini depoladığı için konsola "true" ifadesi 
+/**
+ * x ile y değişkeni kıyaslanacak aynı veriyi ve veri tipini depoladığı için konsola "true" ifadesi
  * yazdırılacaktır.
  */
 console.log(x === y);
@@ -414,7 +407,7 @@ const m = 8;
 const n = "8";
 
 /**
- * m ile n değişkeni kıyaslanacak aynı veriyi depolamasına rağmen farklı  
+ * m ile n değişkeni kıyaslanacak aynı veriyi depolamasına rağmen farklı
  * veri tipine sahip oldukları için konsola "false" ifadesi yazdırılacaktır.
  */
 console.log(m === n);
@@ -424,7 +417,6 @@ console.log(m === n);
     true
     false
 
-
 ### `!=` Operatörü
 
 iki veya daha fazla değişkenin depoladığı verileri **içeriği** bakımından kıyaslar. **Kıyaslama sonucu doğru ise `false`, değilse `true` olacak şekilde değer döndürür.**
@@ -432,8 +424,6 @@ iki veya daha fazla değişkenin depoladığı verileri **içeriği** bakımınd
 **💡 Bunu şu şekilde aklınızda tutabilirsiniz. Sonucu `true` olan bir expression'ı `false`, sonucu `false` olsan bir expression'ı `true` olarak değerlendirir.**
 
 **Örnek**
-
-
 
 ```javascript
 %%javascript
@@ -455,7 +445,6 @@ console.log(m != n);
     false
     true
 
-
 ### `!==` Operatörü
 
 iki veya daha fazla değişkenin depoladığı verileri **içeriği ve veri tipi** bakımından kıyaslar. **Kıyaslama sonucu doğru ise `false`, değilse `true` olacak şekilde değer döndürür.**
@@ -464,15 +453,13 @@ iki veya daha fazla değişkenin depoladığı verileri **içeriği ve veri tipi
 
 **Örnek**
 
-
-
 ```javascript
 %%javascript
 const x = 5;
 const y = 5;
 
-/** 
- * x ile y değişkenleri kıyaslanacak aynı veriyi ve veri tipine depoladığı için konsola "false" ifadesi 
+/**
+ * x ile y değişkenleri kıyaslanacak aynı veriyi ve veri tipine depoladığı için konsola "false" ifadesi
  * yazdırılacaktır.
  */
 console.log(x !== y);
@@ -484,7 +471,7 @@ const n = "8";
 
 /**
  * m ile n değişkenleri kıyaslanacak aynı veriyi depolamasına rağmen farklı veri tipini depoladığı için
- * konsola "true" ifadesi yazdırılacaktır. 
+ * konsola "true" ifadesi yazdırılacaktır.
  */
 console.log(m !== n);
 
@@ -493,20 +480,19 @@ console.log(m !== n);
     false
     true
 
-
 ### `?` Operatörü
 
 JavaScript'de `?` işareti **_ternary_** operatör olarak isimlendirilir.
 
 Ternary operatörü bir conditional operatördür. Yani bir condition'a göre işlemleri gerçekleştirir ve programın akışını değiştirir.
 
+Sıklıkla bir koşula bağlı olarak bir değeri değişkene atamak için kullanılır.
+
 **➖ Ternary Conditional Operatörü ile `If` Conditional Statement Arasındaki Fark**
 
-**Ternary ile oluşturulan kıyaslama işlemleri genelde tek satırdan oluşur ve iki değişkeni kıyaslamak için kullanılır. İkiden fazla durumunun kıyaslama yapılması halinde `if` keyword'u ile yapılan kıyaslama işlemleri tercih edilir. Bu sayede kodun daha kolay okunup yönetilmesi amaçlanır.**
+**Ternary operatörü kıyaslama işlemini basit hale getirmek için oluşturulmuştur. Ternary ile oluşturulan kıyaslama işlemleri genelde tek satırdan oluşur ve iki değişkeni kıyaslamak için kullanılır. İkiden fazla durumunun kıyaslama yapılması halinde `if` keyword'u ile yapılan kıyaslama işlemleri tercih edilir. Bu sayede kodun daha kolay okunup yönetilmesi amaçlanır.**
 
 **Örnek**
-
-
 
 ```javascript
 %%javascript
@@ -532,7 +518,6 @@ result
 
     Evet iki değişkenin depoladığı veri birbirine eşittir.
 
-
 ## JavaScript String Operatörleri
 
 JavaScript'de temelde 2 adet string operatör vardır bunlar:
@@ -544,14 +529,11 @@ JavaScript'de temelde 2 adet string operatör vardır bunlar:
 
 Şimdi bunları inceleyelim arkadaşlar.
 
-
 ### `+` Ekleme Operatörü
 
 String değişkenlerde `+` operatörü **ekleme operatörü olarak ifade edilir.** Yani iki sting değişken toplanmaz, birbirine eklenir.
 
 **Örnek**
-
-
 
 ```javascript
 %%javascript
@@ -569,12 +551,9 @@ console.log(value1 + value2);
 
     515
 
-
 ### `+=` Ekleme ve Atama Operatörü
 
 Bir string ifadeye başka bir string ifadeyi ekledikten sonra elde edilen sonucu değişken içerisinde depolayabiliriz.
-
-
 
 ```javascript
 %%javascript
@@ -592,16 +571,13 @@ console.log(value1);
 
     KemalAtatürk
 
-
-**⚠️ Numerik özellikli string değerler dışındaki diğer string değerleri matematiksel işlemlerde sonuca katkıda bulunmazlar. Şayet bir string matematiksel ifade içerisinde kullanılırsa işlem sonucunun veri tipi string olacaktır. Bu durum string'in bulunduğu yere göre sonucu etkiler. Numerik özellikli string değerler için durum biraz daha farklıdır. Daha detaylı bilgi almak için [JavaScript Numerik Özellikli String Değerler](js07-numeric-data-type.ipynb#javascript-numerik-özellikli-string-değerler) başlığına bakabilirsiniz.**
+**⚠️ Numerik özellikli string değerler dışındaki diğer string değerleri matematiksel işlemlerde sonuca katkıda bulunmazlar. Şayet bir string matematiksel ifade içerisinde kullanılırsa işlem sonucunun veri tipi string olacaktır. Bu durum string'in bulunduğu yere göre sonucu etkiler. Numerik özellikli string değerler için durum biraz daha farklıdır. Daha detaylı bilgi almak için [JavaScript Numerik Özellikli String Değerler](https://gist.github.com/eminaltan/19243d5c166e829ec9d3519e5e673d60#javascript-numerik-%C3%B6zellikli-string-de%C4%9Ferler) başlığına bakabilirsiniz.**
 
 <!-- [#1](https://github.com/eminaltan/learn-web/issues/1) -->
 
 **JavaScript'de expression'lar (ifadeler) soldan sağa şekilde değerlendirilir. Yani Javascript ifadenin nerede string olacağını bu pattern'e göre belirler.**
 
 **Örnek**
-
-
 
 ```javascript
 %%javascript
@@ -621,27 +597,84 @@ console.log(y);
     71
     143
 
-
 ## JavaScript Mantıksal Operatörler
 
 Mantıksal operatörler JavaScript'de özellikle kıyaslama işlemlerinde sıklıkla kullanılan operatör grubudur. Bu bakımdan anlaşılması önem taşır.
 
 Mantıksal operatörleri listeleyecek olursak:
 
-| **Operator** | **Açıklama**  |
-| ------------ | ------------- |
-| `&&`         | Mantıksal AND |
-| `\|\|`       | Mantıksal OR  |
-| `!`          | Mantıksal NOT |
+| **Operator** | **Açıklama**                |
+| ------------ | --------------------------- |
+| `??`         | Nullish Coalescing Operator |
+| `?.`         | Optional Chaining Operator  |
+| `&&`         | Mantıksal AND               |
+| `\|\|`       | Mantıksal OR                |
+| `!`          | Mantıksal NOT               |
 
+### `??` Nullish Coalescing Operatörü
+
+Expression'da kullanılan ifadelerin içeriklerini `null` **veya** `undefined` olması durumuna göre kıyaslar.
+
+Expression'daki ifadelerden herhangi biri `null` **veya** `undefined` değerine sahipse diğer ifadenin değeri sonuç olarak döndürülür.
+
+**💡 `??` operatörünün temelde kullanım amacı `null` veya `undefined` veri tiplerine dayanır. Diğer operatörler kullanarak da aynı sonuca erişilebilir fakat `??` operatörü bu işlemi sadeleştirmek için oluşturulmuştur.**
+
+**`??` operatörü sayesinde yapılacak işlemi ortaklayabiliriz. Örneğin bir değişkenin `null` veya `undefined` değerlerinden herhangi birine sahip olması halinde belirli bir işlemi gerçekleştirebiliriz. Bu anlamda `??` operatörü işimizi kolaylaştırır.**
+
+**Örnek**
+
+```javascript
+%%javascript
+
+const a = null;
+const b = 10;
+
+/**
+ * a değişkeninin değeri null olması sebebi ile b değişkeninin değeri sonuç olarak
+ * döndürülecektir.
+ */
+console.log(`Kıyaslama işleminin sonucu: ${b ?? a}`);
+
+console.log(a ? "1":"0");
+```
+
+    Kıyaslama işleminin sonucu: 10
+    0
+
+### `?.` Mantıksal Optional Chaining Operatörü
+
+`?.` operatörü nesne veri türünde oluşturulmuş bir değişkendeki nested property'lere ulaşmamızı ve `null` veya `undefined` değerleri için property değerlerini sınamamızı sağlar. Nested property değeri `null` veya `undefined` değerlerinden herhangi birine sahip ise JS çalışmayı durdurur ve `undefined` olarak sonuç döndürür.
+
+**Örnek**
+
+```javascript
+%%javascript
+
+const car={
+    id: 1,
+    type: "station wagon",
+    carProperties: {
+        color: "white",
+        engine: 1.4,
+    }
+}
+
+// white nested property'sine erişiyoruz ve konsola sonucu yazdırıyoruz.
+console.log(car?.carProperties?.color);
+
+// wheelSize adında nested property'si olmadığı için dönecek olan sonuç undefined olacaktır.
+console.log(car?.carProperties?.wheelSize);
+
+```
+
+    white
+    undefined
 
 ### `&&` Mantıksal **_AND_** Operatörü
 
 Expression içerisindeki ifadeleri kıyaslar **her ifadenin doğru olması durumunda tüm sonuç `true` olacaktır.**
 
 **Herhangi bir ifadenin sonucunun `false` olması durumunda tüm sonuç `false` olacaktır.**
-
-
 
 ```javascript
 %%javascript
@@ -675,7 +708,6 @@ console.log(result2);
     true
     false
 
-
 ### `||` Mantıksal **_OR_** Operatörü
 
 Expression içerisindeki ifadeleri kıyaslar **herhangi bir ifadenin doğru olması durumunda tüm sonuç `true` olacaktır.**
@@ -683,8 +715,6 @@ Expression içerisindeki ifadeleri kıyaslar **herhangi bir ifadenin doğru olma
 **Şayet tüm ifadelerin sonucu `false` olursa tüm sonuç `false` olacaktır.**
 
 **Örnek**
-
-
 
 ```javascript
 %%javascript
@@ -712,12 +742,9 @@ console.log(result2);
     true
     false
 
-
 ### `!` Mantıksal **_NOT_** Operatörü
 
 Bir expression sonucunun tersini alır. Yani ifade `true` ise `false`, `false` ise `true` sonuçlanır.
-
-
 
 ```javascript
 %%javascript
@@ -745,7 +772,6 @@ console.log(!y);
     false
     true
 
-
 **❗ Mantıksal atama operatörlerinin, mantıksal operatörler ile ilişkisi olmakla birlikte aynı anlama gelmemektedir. Mantıksal atama operatörleri ES (2020) ile JavaScript'e dahil olmuştur. Bu bakımdan 2020 yılından önce release edilen tarayıcılarda çalışmayabilir.**
 
 Mantıksal atama operatörlerini listelersek:
@@ -758,14 +784,11 @@ Mantıksal atama operatörlerini listelersek:
 
 Şimdi bu operatörleri tek tek inceleyelim.
 
-
 ### `&&=` Mantıksal **_AND_** Atama Operatörü
 
 **Bir expression veya statement'ın sonucunun `true` olması durumunda ikinci değer değişkene atanır.**
 
 **Örnek**
-
-
 
 ```javascript
 %%javascript
@@ -795,9 +818,8 @@ console.log(y);
 
 ```
 
-    [33m8[39m
-    [90mundefined[39m
-
+    8
+    undefined
 
 ### `||=` Mantıksal **_OR_** Atama Operatörü
 
@@ -806,8 +828,6 @@ console.log(y);
 **💡 `||=` operatörü ile `&&=` operatörü birbirine zıttır. Bu bağlamda birinin mantığını kavrarsanız diğerininkini de kavrayabilirsiniz.**
 
 **Örnek**
-
-
 
 ```javascript
 %%javascript
@@ -837,17 +857,14 @@ console.log(x);
 
 ```
 
-    [33m20[39m
-    [33m35[39m
-
+    20
+    35
 
 ### `??=` **_Nullish Coalescing Assignment_** Operatörü
 
 **Bir değişkenin depoladığı verinin **_undefined_** veya **_null_** olması durumunda ikinci değer değişkene atanır.**
 
 **Örnek**
-
-
 
 ```javascript
 %%javascript
@@ -863,8 +880,7 @@ console.log(80);
 
 ```
 
-    [33m80[39m
-
+    80
 
 ## JavaScript Bitwise Operatörler
 
@@ -881,7 +897,6 @@ console.log(80);
 
 Şimdi bunları inceleyelim arkadaşlar.
 
-
 ### `&` **_Bitwise AND_** Operatörü
 
 Bit düzeyinde mantıksal **_AND_** işlemi gerçekleştirmek için kullanılır. Decimal değeri binary sayısal düzenine çevirir sonrasında bit'leri kıyaslar ve elde edilen sonucu tekrar decimal sayı sistemine çevirir.
@@ -896,8 +911,6 @@ Bit düzeyinde mantıksal **_AND_** işlemi gerçekleştirmek için kullanılır
 | 1                   | 1                    | 1                |
 
 **Örnek**
-
-
 
 ```javascript
 %%javascript
@@ -921,7 +934,6 @@ console.log(x);
 
     1
 
-
 ### `|` **_Bitwise OR_** Operatörü
 
 Bit düzeyinde mantıksal **_OR_** işlemi gerçekleştirmek için kullanılır. Decimal değeri binary sayısal düzenine çevirir sonrasında bit'leri kıyaslar ve elde edilen sonucu tekrar decimal sayı sistemine çevirir.
@@ -938,8 +950,6 @@ Bit düzeyinde mantıksal **_OR_** işlemi gerçekleştirmek için kullanılır.
 | 1                   | 1              |
 
 **Örnek**
-
-
 
 ```javascript
 %%javascript
@@ -958,7 +968,6 @@ console.log(x);
 
     47
 
-
 ### `~` **_Bitwise NOT_** Operatörü
 
 Bit düzeyinde mantıksal **_NOT_** işlemi gerçekleştirmek için kullanılır. Decimal değeri binary sayısal düzenine çevirir sonrasında bit'leri kıyaslar ve elde edilen sonucu tekrar decimal sayı sistemine çevirir.
@@ -976,8 +985,6 @@ Kısaca bit değerlerini ters çevirir.
 
 **Örnek**
 
-
-
 ```javascript
 %%javascript
 
@@ -989,7 +996,6 @@ console.log(~x);
 ```
 
     10
-
 
 ### `^` **_Bitwise XOR_** Operatörü
 
@@ -1005,8 +1011,6 @@ Bit düzeyinde mantıksal **_XOR_** işlemi gerçekleştirmek için kullanılır
 | 1                   | 1                    | 0                |
 
 **Örnek**
-
-
 
 ```javascript
 %%javascript
@@ -1027,7 +1031,6 @@ console.log(x);
 
     8
 
-
 ## JavaScript Type Operatörleri
 
 JavaScript'de bir çok type operatörü vardır. Type operatörleri bir değişkeni başka bir değişkene dönüştürmek için veya değişkenin türünü ve veri tipini öğrenme gibi işlemler için kullanılır.
@@ -1040,14 +1043,11 @@ En çok kullanılan type operatörlerini listelersek:
 
 Diğer type operatörlerine ayrı bir başlık altında değineceğim. Çünkü asıl konumuz operatörleridir. Type operatörleri aynı zamanda metot (fonksiyon) olma özelliği taşır.
 
-
 ### `typeOf` Operatörü/Metodu
 
 Bir değişkenin depoladığı değere göre veri türünü öğrenmemizi sağlar.
 
 **Örnek**
-
-
 
 ```javascript
 %%javascript
@@ -1072,7 +1072,6 @@ console.log(typeof z);
     string
     boolean
 
-
 ### `instanceof` Operatörü/Metodu
 
 Object veri türü özelliğine sahip değişkenlerde birden fazla kullanım yöntemi olmakla birlikte değişkenin veri türünü belirlemede, bir özelliğin nesne ile ilişkisini anlamada veya katılım izleme işlemlerini gerçekleştirmek için kullanılır.
@@ -1080,8 +1079,6 @@ Object veri türü özelliğine sahip değişkenlerde birden fazla kullanım yö
 **💡 Özellikle object veri türü özellikli değişkenlerde debug işlemleri için kullanışlı olabilir.**
 
 **Örnekler**
-
-
 
 ```javascript
 %%javascript
@@ -1107,8 +1104,6 @@ console.log("student değişkeninin veri tipi" + " " + typeof student + "'dir.")
 
     Evet student nesne özellikli bir değişkendir.
     student değişkeninin veri tipi object'dir.
-
-
 
 ```javascript
 %%javascript
@@ -1136,8 +1131,6 @@ console.log(student instanceof Array);
     true
     false
 
-
 [^1]: "Bit," kısaltılmış haliyle "binary digit" kelimesinin baş harflerinden oluşan bir terimdir ve bilgisayar bilimlerinde temel bir kavramdır. Bit, en küçük veri birimi olarak bilinir ve yalnızca iki değere sahip olabilen bir elektronik veya dijital bilgi parçasını temsil eder. Bu iki değer 0 ve 1'dir.
 [^2]: "Binary" terimi, bilgisayar bilimlerinde ve elektronikte oldukça yaygın olarak kullanılan bir terimdir ve ikili (2 temel değer) sayı sistemini ifade eder. İkili sistem, yalnızca iki sembol veya değer içeren bir sayı sistemidir. Bu iki sembol genellikle "0" ve "1" olarak temsil edilir.
 [^3]: "Decimal," yaygın olarak ondalık sayı sistemini ifade eden bir terimdir. Ondalık sayı sistemi, 10 rakamdan oluşur ve her bir rakamın temsil ettiği değer 0 ila 9 arasında değişir. Ondalık sistemi kullanarak herhangi bir sayıyı ifade edebilirsiniz. Bu sistemde her haneli bir sayı, 10'un üssüne dayalı bir değer temsil eder.
-

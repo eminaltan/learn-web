@@ -1,3 +1,23 @@
+# JavaScript'de Conditional Statement'lar
+
+Merhaba arkadaşlar serinin bu bölümünde JavaScript'de **_conditional statement'ları_** inceleyeceğiz.
+
+Yazıda:
+
+- Conditional statement kavramına ve kullanım amacına
+
+- Conditional statement türlerine
+
+- Aralarındaki farklara
+
+- `?` (Ternary) operatörünün kullanımına
+
+- Bazı yararlı ip uçlarına
+
+Değineceğim.
+
+İyi okumalar dilerim.
+
 ## JavaScript'de Conditional Statement Kavramı
 
 Bazen belirlediğimiz bir koşulun veya matematiksel ifadenin sonucuna göre program içerisinde akışı değiştirmek ve farklı işlemler yapmak isteyebiliriz. Bu gibi durumlarda conditional statement'ları kullanırız.
@@ -106,7 +126,7 @@ if (18 <= age) {
 console.log("Hayır alkol satışı yapılamaz.");
 ```
 
-    Evel alkol satışı yapılabilir.
+    Evet alkol satışı yapılabilir.
     Hayır alkol satışı yapılamaz.
 
 Birden fazla koşul gerektiren durumlarda `else, else if` veya `switch` statement'larından faydalanırız. Yazının ilerleyen bölümlerinde her birine değineceğiz.

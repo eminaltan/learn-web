@@ -27,7 +27,6 @@ Yazının Türkçe versiyonu için [linke](../../TR/JavaScript/js19-loops.md) t�
 	/vscode-jupyter-toc-config -->
 <!-- THIS CELL WILL BE REPLACED ON TOC UPDATE. DO NOT WRITE YOUR TEXT IN THIS CELL -->
 
-
 ## <a id='toc1_1_'></a>[Concept of Loops and Types](#toc0_)
 
 Sometimes, we may want to process and store our data in a computer environment. Performing this task manually for a few pieces of data will be easy. However, if we consider having a list consisting of hundreds of data, this process will not only be difficult but also lead to labor and time loss.
@@ -49,7 +48,6 @@ Listing the commonly used loop types in JavaScript:
 - `do...while`
 
 Now, let's delve into these loop types.
-
 
 ### <a id='toc1_1_1_'></a>[`for` Loop](#toc0_)
 
@@ -75,12 +73,9 @@ Let's discuss the expressions:
 
 **Example**
 
-
-
-```python
-%%script node
+```javascript
 for (let i = 0; i < 5; i++) {
-    console.log(`Value of i: ${i}`);
+  console.log(`Value of i: ${i}`);
 }
 ```
 
@@ -89,7 +84,6 @@ for (let i = 0; i < 5; i++) {
     Value of i: 2
     Value of i: 3
     Value of i: 4
-
 
 If we explain the above `for` loop:
 
@@ -101,26 +95,22 @@ If we explain the above `for` loop:
 
 **Example**
 
-
-
-```python
-%%script node
+```javascript
 const cars = ["Lada", "Tata", "BMW", "Audi", "Mercedes"];
 
 // We can define multiple variables simultaneously in the exp1 part.
 for (let i = 0, len = cars.length, text = ""; i < len; i++) {
-    text += cars[i] + " ";
+  text += cars[i] + " ";
 
-    console.log(`Car brand: ${text}`);
-};
+  console.log(`Car brand: ${text}`);
+}
 ```
 
-    Car brand: Lada 
-    Car brand: Lada Tata 
-    Car brand: Lada Tata BMW 
-    Car brand: Lada Tata BMW Audi 
-    Car brand: Lada Tata BMW Audi Mercedes 
-
+    Car brand: Lada
+    Car brand: Lada Tata
+    Car brand: Lada Tata BMW
+    Car brand: Lada Tata BMW Audi
+    Car brand: Lada Tata BMW Audi Mercedes
 
 As seen in the example above, we defined multiple variables for the `exp1` part. We separated the variables using the `,` sign.
 
@@ -128,17 +118,13 @@ Using the `exp1` part inside the `for` loop is optional. You can define the `exp
 
 **Example**
 
-
-
-```python
-%%script node
+```javascript
 // We defined the i variable corresponding to the exp1 part outside the for statement.
 let i = 0;
 
-for (/* We skipped the exp1 part. */; i < 5; i++) {
-    console.log(`Value of i: ${i}`);
+for (; /* We skipped the exp1 part. */ i < 5; i++) {
+  console.log(`Value of i: ${i}`);
 }
-
 ```
 
     Value of i: 0
@@ -147,24 +133,21 @@ for (/* We skipped the exp1 part. */; i < 5; i++) {
     Value of i: 3
     Value of i: 4
 
-
 The use of the `exp2` part (loop condition) within the for loop is optional.
 
 **⚠️ If the loop condition is not determined, the break statement should be included in the loop. Otherwise, the program will crash because the loop will not terminate.**
 
 **Example**
 
+```javascript
+for (let i = 0 /* We skipped the exp2 part. */; ; i++) {
+  console.log(`Value of i: ${i}`);
 
-
-```python
-%%script node
-for (let i = 0; /* We skipped the exp2 part. */; i++) {
-    console.log(`Value of i: ${i}`);
-    
-    // The loop will terminate when the value of i is 5.
-    if (i == 5) { break; }
-};
-
+  // The loop will terminate when the value of i is 5.
+  if (i == 5) {
+    break;
+  }
+}
 ```
 
     Value of i: 0
@@ -174,27 +157,21 @@ for (let i = 0; /* We skipped the exp2 part. */; i++) {
     Value of i: 4
     Value of i: 5
 
-
 The usage of the `break` statement is visible above. If we had not used the `break` statement, the code would have entered an infinite loop and causing the program to crash.
 
 **💡 In situations where we have not yet determined the termination condition `for` loop but expect it to emerge during the coding process, we can benefit from the `break` statement.**
-
 
 The use of the `exp3` part (iterate value) within the for loop is optional. In this case, the `exp3` part is defined within the for loop.
 
 **Example**
 
+```javascript
+for (let i = 0; i < 5 /* We skipped the exp3 part */; ) {
+  console.log(`Value of i: ${i}`);
 
-
-```python
-%%script node
-for (let i = 0; i < 5; /* We skipped the exp3 part */) {
-    console.log(`Value of i: ${i}`);
-
-    // We defined the exp3 part inside the loop.
-    i++;
+  // We defined the exp3 part inside the loop.
+  i++;
 }
-
 ```
 
     Value of i: 0
@@ -203,9 +180,7 @@ for (let i = 0; i < 5; /* We skipped the exp3 part */) {
     Value of i: 3
     Value of i: 4
 
-
 As seen in the example above, we did not use the `exp3` part among the components that make up the for loop. Instead, we used the iterate value within the code block.
-
 
 #### <a id='toc1_1_1_1_'></a>[`for` Usage of Scopes in the for Loop](#toc0_)
 
@@ -213,18 +188,16 @@ Unless a variable is declared using the `var` keyword, if the value of a variabl
 
 **Example**
 
-
-
-```python
-%%script node
+```javascript
 let i = 5;
 
 for (let i = 0; i < 10; i++) {
-    console.log(`Value of i within the for scope: ${i}`);
+  console.log(`Value of i within the for scope: ${i}`);
 }
 
-console.log(`Value of i outside the loop: ${i}. The value of the i variable remains the same.`);
-
+console.log(
+  `Value of i outside the loop: ${i}. The value of the i variable remains the same.`
+);
 ```
 
     Value of i within the for scope: 0
@@ -239,24 +212,21 @@ console.log(`Value of i outside the loop: ${i}. The value of the i variable rema
     Value of i within the for scope: 9
     Value of i outside the loop: 5. The value of the i variable remains the same.
 
-
 The reason for this is that the `let` keyword has block scope characteristics. If we had used the `var` keyword in the same example, the value stored in the variable `i` would have been updated. This is because the `var` keyword has a global scope feature. To better understand the topic, you can refer to the [Block Scope Concept](js03-variables.ipynb#block-scope-kavramı) section.
 
 **Example**
 
-
-
-```python
-%%script node
+```javascript
 // The value of the i variable will be 10 after the loop.
 var i = 5;
 
 for (var i = 0; i < 10; i++) {
-    console.log(`Value of i within the for scope: ${i}`);
+  console.log(`Value of i within the for scope: ${i}`);
 }
 
-console.log(`Value of i outside the loop: ${i}. The value of the i variable has been updated.`);
-
+console.log(
+  `Value of i outside the loop: ${i}. The value of the i variable has been updated.`
+);
 ```
 
     Value of i within the for scope: 0
@@ -270,7 +240,6 @@ console.log(`Value of i outside the loop: ${i}. The value of the i variable has 
     Value of i within the for scope: 8
     Value of i within the for scope: 9
     Value of i outside the loop: 10. The value of the i variable has been updated.
-
 
 ### <a id='toc1_1_2_'></a>[`for...in` Loop](#toc0_)
 
@@ -294,41 +263,35 @@ Regarding these variables:
 
 **Example**
 
-
-
-```python
-%%script node
+```javascript
 const cars = { carName: "Lada", carModel: 1200, carColor: "white" };
 
 var stringHolder;
 
 // Copy the keys of properties in the cars variable to the keys variable.
 for (let keys in cars) {
+  /**
+   * Using a switch condition, we determine the value of the stringHolder variable
+   * based on the current key value.
+   */
+  switch (keys) {
+    case "carName":
+      stringHolder = "Car Brand";
+      break;
+    case "carModel":
+      stringHolder = "Car Model";
+      break;
+    default:
+      stringHolder = "Car Color";
+  }
 
-    /** 
-     * Using a switch condition, we determine the value of the stringHolder variable 
-     * based on the current key value.
-     */
-    switch (keys) {
-        case "carName":
-            stringHolder = "Car Brand";
-            break;
-        case "carModel":
-            stringHolder = "Car Model";
-            break;
-        default:
-            stringHolder = "Car Color";
-    }
-
-    console.log(`${stringHolder}: ${cars[keys]}`);
+  console.log(`${stringHolder}: ${cars[keys]}`);
 }
-
 ```
 
     Car Brand: Lada
     Car Model: 1200
     Car Color: white
-
 
 Explanation of the above `for...in` loop:
 
@@ -344,14 +307,11 @@ The `for...in` loop can also be used to access elements in an array variable.
 
 **Example**
 
-
-
-```python
-%%script node
+```javascript
 const cars = ["Lada", "Audi", "BMW", "Tata"];
 
 for (let car of cars) {
-    console.log(`Car brand: ${car}`);
+  console.log(`Car brand: ${car}`);
 }
 ```
 
@@ -360,20 +320,15 @@ for (let car of cars) {
     Car brand: BMW
     Car brand: Tata
 
-
 **❗ Using the `for...in` loop is not recommended for arrays data type. This is because it can cause issues related to index when we want to use array methods within the loop. Instead of `for...in`, you can use `for`, `for...of` loops, or `Array.forEach()` method.**
 
 **Example**
 
-
-
-```python
-%%script node
+```javascript
 const cars = ["Lada", "Audi", "BMW", "Tata"];
 
 // We used an arrow function as the callback method.
-cars.forEach(car => console.log(`Car brand: ${car}`));
-
+cars.forEach((car) => console.log(`Car brand: ${car}`));
 ```
 
     Car brand: Lada
@@ -381,9 +336,7 @@ cars.forEach(car => console.log(`Car brand: ${car}`));
     Car brand: BMW
     Car brand: Tata
 
-
 In the example above, we utilized the `Array.forEach()` method. The `Array.forEach()` method will iterate over each element in the `cars` array variable, and for each element, the `forEach()` method will execute. The value of the element will be transferred to the variable `i`, and the console will print the value of the current element.
-
 
 ### <a id='toc1_1_3_'></a>[`for...of` Loop](#toc0_)
 
@@ -407,27 +360,22 @@ Regarding these variables:
 
 **Example**
 
-
-
-```python
-%%script node
+```javascript
 const cars = ["Lada", "Audi", "BMW", "Tata"];
 
-/** 
- * The elements of the cars variable will be copied to the iterator variable, and the loop 
+/**
+ * The elements of the cars variable will be copied to the iterator variable, and the loop
  * will iterate for each element.
  */
 for (const iterator of cars) {
-    console.log(`Car brand: ${iterator}`);
+  console.log(`Car brand: ${iterator}`);
 }
-
 ```
 
     Car brand: Lada
     Car brand: Audi
     Car brand: BMW
     Car brand: Tata
-
 
 The working logic of the `for...of loop` is similar to the `for...in` loop.
 
@@ -437,10 +385,7 @@ Let's create a `for...of` loop for a variable with the string data type.
 
 **Example**
 
-
-
-```python
-%%script node
+```javascript
 const message = "Hello";
 
 /**
@@ -448,20 +393,17 @@ const message = "Hello";
  * and this value will be printed to the console.
  */
 for (const iterator of message) {
-    console.log(iterator + " ");
+  console.log(iterator + " ");
 }
-
 ```
 
-    H 
-    e 
-    l 
-    l 
-    o 
-
+    H
+    e
+    l
+    l
+    o
 
 In the example above, each character of the `message` variable will be copied to the `iterator` variable in each iteration, and the current value of the `iterator` variable will be printed to the console.
-
 
 ### <a id='toc1_1_4_'></a>[`while` Loop](#toc0_)
 
@@ -480,27 +422,22 @@ while (condition) {
 
 **Example**
 
-
-
-```python
-%%script node
+```javascript
 let i = 0;
 
 while (i < 5) {
-    
-    /** 
-     * The loop will run as long as the value of the i variable is less than 5, and 
-     * the current value of the i variable will be printed to the console.
-     */
-    console.log(`Current value of the i variable: ${i}`);
+  /**
+   * The loop will run as long as the value of the i variable is less than 5, and
+   * the current value of the i variable will be printed to the console.
+   */
+  console.log(`Current value of the i variable: ${i}`);
 
-  /** 
-   * In each iteration, we increment the value of the i variable by +1 so that we 
-   * can repeat the loop and test the condition inside the while loop.  
+  /**
+   * In each iteration, we increment the value of the i variable by +1 so that we
+   * can repeat the loop and test the condition inside the while loop.
    */
   i++;
 }
-
 ```
 
     Current value of the i variable: 0
@@ -509,22 +446,16 @@ while (i < 5) {
     Current value of the i variable: 3
     Current value of the i variable: 4
 
-
 **⚠️ To retest the condition within the `while` loop and to enter the loop (this is called iteration), we are incrementing the value of the `i` variable by +1 using the `i++` syntax. This way, the condition checks the value stored in the `i` variable each time. If we didn't increment the value of the `i` variable, the `while` loop would become an infinite loop, causing our JavaScript program to crash.**
-
 
 If we had done the above example with a `for` loop
 
 **Example**
 
-
-
-```python
-%%script node
-for (let i = 0; i < 5; i++){
-    console.log(`Current value of the i variable: ${i}`);
+```javascript
+for (let i = 0; i < 5; i++) {
+  console.log(`Current value of the i variable: ${i}`);
 }
-
 ```
 
     Current value of the i variable: 0
@@ -532,7 +463,6 @@ for (let i = 0; i < 5; i++){
     Current value of the i variable: 2
     Current value of the i variable: 3
     Current value of the i variable: 4
-
 
 ### <a id='toc1_1_5_'></a>[`do...while` Loop](#toc0_)
 
@@ -555,20 +485,17 @@ do {
 
 **Example**
 
-
-
-```python
-%%script node
+```javascript
 let i = 0;
 
 // The loop will be executed at least once.
 do {
-    console.log(`Current value of the i variable: ${i}`);
-    i++;
-}
-// Then the loop condition will be checked.
-while (i < 5);
-
+  console.log(`Current value of the i variable: ${i}`);
+  i++;
+} while (
+  // Then the loop condition will be checked.
+  i < 5
+);
 ```
 
     Current value of the i variable: 0
@@ -577,9 +504,7 @@ while (i < 5);
     Current value of the i variable: 3
     Current value of the i variable: 4
 
-
 **⚠️ To retest the condition within the `do...while` loop and to enter the loop (this is called iteration), we are incrementing the value of the `i` variable by +1 using the `i++` syntax. This way, the condition checks the value stored in the `i` variable each time. If we didn't increment the value of the `i` variable, the `do...while` loop would become an infinite loop, causing our JavaScript program to crash.**
-
 
 ### <a id='toc1_1_6_'></a>[Usage of `break` and `continue` Statements in a Loop:](#toc0_)
 
@@ -591,27 +516,21 @@ If we use the `continue` statement, the loop will not execute once when the spec
 
 **Example**
 
-
-
-```python
-%%script node
+```javascript
 const studentNames = ["Emin", "Murat", "Ömer", "Hasan"];
 
 for (const iterator of studentNames) {
-    
-    // If the content of the iterator variable is "Ömer," the loop will terminate.
-    if (iterator === "Ömer") {
-        break;
-    }
+  // If the content of the iterator variable is "Ömer," the loop will terminate.
+  if (iterator === "Ömer") {
+    break;
+  }
 
-    console.log(`Student's name: ${iterator}`);
+  console.log(`Student's name: ${iterator}`);
 }
-
 ```
 
     Student's name: Emin
     Student's name: Murat
-
 
 1. In the example above, the elements of the variable named `studentNames`, which is of type array, are copied to the `iterator` variable.
 
@@ -619,25 +538,20 @@ for (const iterator of studentNames) {
 
 3. The copied value is printed to the console.
 
-
 If the example above had been done using the `continue` statement, when the condition is met, the loop would be paused temporarily, and then it would continue to run. In other words, the value "Ömer" would not be printed to the console.
 
 **Example**
 
-
-
-```python
-%%script node
+```javascript
 const studentNames = ["Emin", "Murat", "Ömer", "Hasan"];
 
 for (const iterator of studentNames) {
-    
-    // If the content of the iterator variable is "Ömer," the current iteration is skipped.
-    if (iterator === "Ömer") {
-        continue;
-    }
-    
-    console.log(`Student's name: ${iterator}`);
+  // If the content of the iterator variable is "Ömer," the current iteration is skipped.
+  if (iterator === "Ömer") {
+    continue;
+  }
+
+  console.log(`Student's name: ${iterator}`);
 }
 ```
 
@@ -645,9 +559,7 @@ for (const iterator of studentNames) {
     Student's name: Murat
     Student's name: Hasan
 
-
 **⚠️ `break` and `continue` statements are the only types of statements in JavaScript that can exit a block.**
-
 
 ## <a id='toc1_2_'></a>[Using Labels in JavaScript](#toc0_)
 
@@ -657,10 +569,7 @@ Labels are particularly useful in nested loops.
 
 **Example**
 
-
-
-```python
-%%script node
+```javascript
 // We define a variable named scores with an array data type.
 let scores = [];
 
@@ -671,7 +580,7 @@ scores[2] = 15;
 scores[3] = 20;
 /** scores[4] = 25;
  *
- * Let's comment out the 3rd element of the array. This way, an empty element with an undefined data type will be 
+ * Let's comment out the 3rd element of the array. This way, an empty element with an undefined data type will be
  * created.
  */
 scores[5] = 30;
@@ -680,7 +589,8 @@ scores[5] = 30;
  * The total variable will hold the total sum of array elements. We will use the result variable
  * to indicate if the loop is continuing.
  */
-let total = 0, result = false;
+let total = 0,
+  result = false;
 
 // We have a label named example. This label corresponds to the if block.
 example: if (scores.length > 0) {
@@ -708,11 +618,9 @@ result
   : console.log(
       "Summation operation could not be completed. There are array elements not included in the sum."
     );
-
 ```
 
     Summation operation could not be completed. There are array elements not included in the sum.
-
 
 In the example above, we used the `example` label in conjunction with the `break` statement. If the result of the condition `if (isNaN(scores[i]))` is `true`, the loop will terminate, and the program will return to the starting point labeled as `example`, continuing execution from the next line.
 
@@ -720,25 +628,19 @@ Let's create an example for the `continue` statement.
 
 **Example**
 
-
-
-```python
-%%script node
+```javascript
 const studentNames = ["Emin", "Murat", "Ömer", "Hasan"];
 
 example: for (let i = 0; i < studentNames.length; i++) {
-    
-    // If the current element is "Ömer," the loop will be skipped for this iteration.
-    if (studentNames[i] == "Ömer") {
-        continue example;
-    } else {
-        console.log(`Current value of the element: ${studentNames[i]}`);
-    }
+  // If the current element is "Ömer," the loop will be skipped for this iteration.
+  if (studentNames[i] == "Ömer") {
+    continue example;
+  } else {
+    console.log(`Current value of the element: ${studentNames[i]}`);
+  }
 }
-
 ```
 
     Current value of the element: Emin
     Current value of the element: Murat
     Current value of the element: Hasan
-

@@ -28,7 +28,6 @@ If you want to read English version of article please [visit](../../EN/JavaScrip
 	/vscode-jupyter-toc-config -->
 <!-- THIS CELL WILL BE REPLACED ON TOC UPDATE. DO NOT WRITE YOUR TEXT IN THIS CELL -->
 
-
 ## <a id='toc1_1_'></a>[Döngü Kavramı ve Türleri](#toc0_)
 
 Bazen verilerimizi bilgisayar ortamında işlemek ve saklamak isteyebiliriz. Sayılı bir kaç tane veri için bu işlemi elle gerçekleştirmek kolay olacaktır. Fakat elimizde yüzlerce veriden oluşan bir liste olduğunu düşünürsek bu işlem zor olacağı gibi emek ve zaman kaybına da neden olacaktır.
@@ -50,7 +49,6 @@ JavaScript'de sık kullanılan döngü türlerini listelerek:
 - `do...while`
 
 Şimdi de bu döngü türlerine değinelim.
-
 
 ### <a id='toc1_1_1_'></a>[`for` Döngüsü](#toc0_)
 
@@ -76,12 +74,9 @@ Expression'lara değinecek olursak:
 
 **Örnek**
 
-
-
-```python
-%%script node
-for (i = 0; i < 5; i++){
-    console.log(`i'nin değeri: ${i}`);
+```javascript
+for (i = 0; i < 5; i++) {
+  console.log(`i'nin değeri: ${i}`);
 }
 ```
 
@@ -90,7 +85,6 @@ for (i = 0; i < 5; i++){
     i'nin değeri: 2
     i'nin değeri: 3
     i'nin değeri: 4
-
 
 Yukarıdaki `for` döngüsünü açıklayacak olursak:
 
@@ -102,26 +96,22 @@ Yukarıdaki `for` döngüsünü açıklayacak olursak:
 
 **Örnek**
 
-
-
-```python
-%%script node
+```javascript
 const cars = ["Lada", "Tata", "BMW", "Audi", "Mercedes"];
 
 // exp1 kısmında birden fazla değişkeni aynı anda tanımlayabiliriz.
-for (let i = 0, len = cars.length, text = ""; i < len; i++){
-    text += cars[i]+" ";
+for (let i = 0, len = cars.length, text = ""; i < len; i++) {
+  text += cars[i] + " ";
 
-    console.log(`Arabanın markası: ${text}`);
-};
+  console.log(`Arabanın markası: ${text}`);
+}
 ```
 
-    Arabanın markası: Lada 
-    Arabanın markası: Lada Tata 
-    Arabanın markası: Lada Tata BMW 
-    Arabanın markası: Lada Tata BMW Audi 
-    Arabanın markası: Lada Tata BMW Audi Mercedes 
-
+    Arabanın markası: Lada
+    Arabanın markası: Lada Tata
+    Arabanın markası: Lada Tata BMW
+    Arabanın markası: Lada Tata BMW Audi
+    Arabanın markası: Lada Tata BMW Audi Mercedes
 
 Yukarıda örnekte görüleceği üzere `exp1` kısmı için birden fazla değişlen tanımladık. Değişkenleri `,` işareti yardımıyla birbirlerinden ayırdık.
 
@@ -129,15 +119,12 @@ Yukarıda örnekte görüleceği üzere `exp1` kısmı için birden fazla deği�
 
 **Örnek**
 
-
-
-```python
-%%script node
+```javascript
 // exp1 kısmına denk gelen i değişkenini for stament'ı dışında tanımladık.
 let i = 0;
 
-for (/* exp1 kısmını es geçtik. */; i < 5; i++){
-    console.log(`i'nin değeri: ${i}`);
+for (; /* exp1 kısmını es geçtik. */ i < 5; i++) {
+  console.log(`i'nin değeri: ${i}`);
 }
 ```
 
@@ -147,23 +134,21 @@ for (/* exp1 kısmını es geçtik. */; i < 5; i++){
     i'nin değeri: 3
     i'nin değeri: 4
 
-
 `exp2` kısmının (döngü koşulunun) `for` döngüsü içerisinde kullanılması opiyoneldir.
 
 **⚠️ Döngü koşulu belirlenmeyecekse döngü içerisinde `break` statement'ına yer verilmelidir. Aksi durumda döngü sonlanmayacağı için program çökecektir.**
 
 **Örnek**
 
+```javascript
+for (i = 0 /* exp2 kısmını es geçtik. */; ; i++) {
+  console.log(`i'nin değeri: ${i}`);
 
-
-```python
-%%script node
-for (i=0; /* exp2 kısmını es geçtik. */; i++){
-    console.log(`i'nin değeri: ${i}`);
-    
-    // i değerinin 5 olması halinde döngü sonlanacaktır.
-    if (i == 5) { break; }
-};
+  // i değerinin 5 olması halinde döngü sonlanacaktır.
+  if (i == 5) {
+    break;
+  }
+}
 ```
 
     i'nin değeri: 0
@@ -173,25 +158,20 @@ for (i=0; /* exp2 kısmını es geçtik. */; i++){
     i'nin değeri: 4
     i'nin değeri: 5
 
-
 Yukarıda `break` statement'ının kullanımı görülüyor. Şayet `break` statement'ını kullanmasaydık kodlar sonsuz döngüye girecek ve program çökecekti.
 
 **💡 Döngünün sona erme koşulunu henüz belirleyemediğimiz ancak kodlama süreci içerisinde döngünün sonlanması gereken koşulun ortaya çıkacağı durumlarda `break` statement'ından faydalanabiliriz.**
-
 
 `exp3` kısmının (iterate değerinin) `for` döngüsü içerisinde kullanılması opiyoneldir. Bu durumda `exp3` kısmı `for` döngüsü içerisinde tanımlanır.
 
 **Örnek**
 
+```javascript
+for (i = 0; i < 5 /* exp3 kısmını es geçtik. */; ) {
+  console.log(`i'nin değeri: ${i}`);
 
-
-```python
-%%script node
-for (i = 0; i < 5; /* exp3 kısmını es geçtik. */){
-    console.log(`i'nin değeri: ${i}`);
-
-    // exp3 kısmını döngü içerisinde tanımladık.
-    i++;    
+  // exp3 kısmını döngü içerisinde tanımladık.
+  i++;
 }
 ```
 
@@ -201,9 +181,7 @@ for (i = 0; i < 5; /* exp3 kısmını es geçtik. */){
     i'nin değeri: 3
     i'nin değeri: 4
 
-
 Yukarıda örnekte görüldüğü gibi `for` döngüsünü oluşturan bölümlerden `exp3` kısmını kullanmadık. Bunun yerine iterate değerini kod bloğu içerisinde kullandık.
-
 
 #### <a id='toc1_1_1_1_'></a>[`for` Döngüsünde Scope'ların Kullanımı](#toc0_)
 
@@ -211,17 +189,16 @@ Bir değişken `var` keyword'u kullanarak **tanımlanmadığı** sürece `for` d
 
 **Örnek**
 
-
-
-```python
-%%script node
+```javascript
 let i = 5;
 
 for (let i = 0; i < 10; i++) {
-    console.log(`i'nin for scope içerisindeki değeri: ${i}`);
+  console.log(`i'nin for scope içerisindeki değeri: ${i}`);
 }
 
-console.log(`i'nin döngü dışındaki değeri: ${i}'dir. i değişkeninin değeri aynı kaldı.`);
+console.log(
+  `i'nin döngü dışındaki değeri: ${i}'dir. i değişkeninin değeri aynı kaldı.`
+);
 ```
 
     i'nin for scope içerisindeki değeri: 0
@@ -236,23 +213,21 @@ console.log(`i'nin döngü dışındaki değeri: ${i}'dir. i değişkeninin değ
     i'nin for scope içerisindeki değeri: 9
     i'nin döngü dışındaki değeri: 5'dir. i değişkeninin değeri aynı kaldı.
 
-
 Bunun nedeni `let` keyword'unun block scope özelliğine sahip olmasıdır. Aynı örneği `var` keyword'u ile yapsaydık `i` değişkenin depoladığı değer güncellenecekti. Çünkü `var` keyword'u global scope özelliğine sahiptir. Konuyu daha iyi anlamak için [Block Scope Kavramı](js03-variables.ipynb#block-scope-kavramı) başlığına bakabilirsiniz.
 
 **Örnek**
 
-
-
-```python
-%%script node
+```javascript
 // i değişkenin değeri döngü sonrası 10 olacak.
 var i = 5;
 
 for (var i = 0; i < 10; i++) {
-    console.log(`i'nin for scope içerisindeki değeri: ${i}`);
+  console.log(`i'nin for scope içerisindeki değeri: ${i}`);
 }
 
-console.log(`i'nin döngü dışındaki değeri: ${i}'dur. i değişkeninin değeri güncellendi.`);
+console.log(
+  `i'nin döngü dışındaki değeri: ${i}'dur. i değişkeninin değeri güncellendi.`
+);
 ```
 
     i'nin for scope içerisindeki değeri: 0
@@ -266,7 +241,6 @@ console.log(`i'nin döngü dışındaki değeri: ${i}'dur. i değişkeninin değ
     i'nin for scope içerisindeki değeri: 8
     i'nin for scope içerisindeki değeri: 9
     i'nin döngü dışındaki değeri: 10'dur. i değişkeninin değeri güncellendi.
-
 
 ### <a id='toc1_1_2_'></a>[`for...in` Döngüsü](#toc0_)
 
@@ -290,43 +264,36 @@ Bu değişkenlere değinecek olursak:
 
 **Örnek**
 
-
-
-```python
-%%script node
+```javascript
 const cars = { carName: "Lada", carModel: 1200, carColor: "white" };
-
 
 var stringHolder;
 
 // cars değişkenindeki property'lerin key kısmı keys değişkenine kopyalanır.
 for (keys in cars) {
-
-/** 
- * switch condtion'u ile o anki key değerine göre stringHolder değişkeninin değerini 
- * belirliyoruz.
- */
-switch (keys) {
+  /**
+   * switch condtion'u ile o anki key değerine göre stringHolder değişkeninin değerini
+   * belirliyoruz.
+   */
+  switch (keys) {
     case "carName":
-        stringHolder = "Arabanın markası";
-        break;
+      stringHolder = "Arabanın markası";
+      break;
     case "carModel":
-        stringHolder = "Arabanın modeli";
-        break;
+      stringHolder = "Arabanın modeli";
+      break;
 
     default:
-        stringHolder = "Arabanın rengi";
-}
+      stringHolder = "Arabanın rengi";
+  }
 
-    console.log(`${stringHolder}: ${cars[keys]}`);
+  console.log(`${stringHolder}: ${cars[keys]}`);
 }
-
 ```
 
     Arabanın markası: Lada
     Arabanın modeli: 1200
     Arabanın rengi: white
-
 
 Yukarıdaki `for...in` döngüsünü açıklayacak olursak:
 
@@ -342,16 +309,12 @@ Yukarıdaki `for...in` döngüsünü açıklayacak olursak:
 
 **Örnek**
 
-
-
-```python
-%%script node
-const cars = ["Lada", "Audi", "BMW", "Tata"]; 
+```javascript
+const cars = ["Lada", "Audi", "BMW", "Tata"];
 
 for (keys in cars) {
-    console.log(`Aracın markası: ${cars[keys]}`);
+  console.log(`Aracın markası: ${cars[keys]}`);
 }
-
 ```
 
     Aracın markası: Lada
@@ -359,19 +322,15 @@ for (keys in cars) {
     Aracın markası: BMW
     Aracın markası: Tata
 
-
 **❗ `for...in` döngüsü array özellikli değişkenlerde kullanılması tavsiye edilen bir döngü türü değildir. Bunun nedeni döngü içerisinde array metotlarını kullanmak istediğimizde index kaynaklı bir takım sorunlara neden olmasıdır. `for...in` yerine `for`, `for...of` döngüsünden veya `Array.forEach()` metodundan faydalanılabilir.**
 
 **Örnek**
 
-
-
-```python
-%%script node
+```javascript
 const cars = ["Lada", "Audi", "BMW", "Tata"];
 
 // Call back metodu olarak arrow function kullandık.
-cars.forEach(i => console.log(`Arabanın markası: ${i}`));
+cars.forEach((i) => console.log(`Arabanın markası: ${i}`));
 ```
 
     Arabanın markası: Lada
@@ -379,9 +338,7 @@ cars.forEach(i => console.log(`Arabanın markası: ${i}`));
     Arabanın markası: BMW
     Arabanın markası: Tata
 
-
 Yukarıdaki örnekte `Array.forEach()` metodundan faydalandık. `cars` array değişkeni içerisindeki her bir element için `forEach()` metodu çalışacak ve elementin değeri `i` değişkenine aktarılarak konsola o anki elementin değeri yazdırılacaktır.
-
 
 ### <a id='toc1_1_3_'></a>[`for...of` Döngüsü](#toc0_)
 
@@ -405,18 +362,15 @@ Bu değişkenlere değinecek olursak:
 
 **Örnek**
 
-
-
-```python
-%%script node
+```javascript
 const cars = ["Lada", "Audi", "BMW", "Tata"];
 
-/** 
- * cars değişkeninin elementleri iterator değişkeni içerisine kopyalanacak ve her bir 
+/**
+ * cars değişkeninin elementleri iterator değişkeni içerisine kopyalanacak ve her bir
  * element için döngü çalışacaktır.
  */
 for (const iterator of cars) {
-    console.log(`Arabanın markası: ${iterator}`);
+  console.log(`Arabanın markası: ${iterator}`);
 }
 ```
 
@@ -424,7 +378,6 @@ for (const iterator of cars) {
     Arabanın markası: Audi
     Arabanın markası: BMW
     Arabanın markası: Tata
-
 
 `for...of` döngüsünün çalışma mantığı `for...in` döngüsüne benzer.
 
@@ -434,31 +387,25 @@ String veri tipine sahip bir değişken için `for...of` döngüsünü oluştura
 
 **Örnek**
 
-
-
-```python
-%%script node
+```javascript
 const message = "Selam";
 
 /**
- * message değişkeninin her bir karakteri iterator değişkenine kopyalanacak ve bu değer 
+ * message değişkeninin her bir karakteri iterator değişkenine kopyalanacak ve bu değer
  * konsola yazdırılacaktır.
  */
 for (const iterator of message) {
-    console.log(iterator + " ");
+  console.log(iterator + " ");
 }
-
 ```
 
-    S 
-    e 
-    l 
-    a 
-    m 
-
+    S
+    e
+    l
+    a
+    m
 
 Yukarıdaki örnekte `message` değişkenin her bir karakteri `iterator` değişkenine kopyalanacak ve o anki `iterator` değişkeninin değeri konsola yazdırılacaktır.
-
 
 ### <a id='toc1_1_4_'></a>[`while` Döngüsü](#toc0_)
 
@@ -477,23 +424,19 @@ while (condition) {
 
 **Örnek**
 
-
-
-```python
-%%script node
+```javascript
 let i = 0;
 
 while (i < 5) {
-    
-    /** 
-     * i değişkenin değeri 5'den küçük olduğu sürece döngü çalışacak ve konsola i 
-     * değişkeninin değeri yazdırılacaktır.
-     */
-    console.log(`i değişkeninin şu anki değeri: ${i}`);
+  /**
+   * i değişkenin değeri 5'den küçük olduğu sürece döngü çalışacak ve konsola i
+   * değişkeninin değeri yazdırılacaktır.
+   */
+  console.log(`i değişkeninin şu anki değeri: ${i}`);
 
-  /** 
-   * Her döngüde i değişkeninin değeri +1 artırıyoruz ki döngüyü tekrar edip while 
-   * içerisindeki koşulun sınanmasını sağlayabilelim.  
+  /**
+   * Her döngüde i değişkeninin değeri +1 artırıyoruz ki döngüyü tekrar edip while
+   * içerisindeki koşulun sınanmasını sağlayabilelim.
    */
   i++;
 }
@@ -505,20 +448,15 @@ while (i < 5) {
     i değişkeninin şu anki değeri: 3
     i değişkeninin şu anki değeri: 4
 
-
 **⚠️ `while` döngüsü içerisinde koşulu tekrar sınamak için ve döngüye girmek için (iterate denir.) `i` değişkenin değerini `i++` syntax'ı ile +1 olarak artırıyoruz. Böylece koşul her seferinde `i` değişkenin depoladığı değeri kontrol ediliyor. Şayet `i` değişkeninin değerini artırmasaydık `while` döngüsü kısır döngüye girecek ve JavaScript programımızın çökmesine neden olacaktı.**
-
 
 Yukarıdaki örneği `for` döngüsü ile yapmış olsaydık:
 
 **Örnek**
 
-
-
-```python
-%%script node
-for (i = 0; i < 5; i++){
-    console.log(`i değişkeninin şu anki değeri: ${i}`);
+```javascript
+for (i = 0; i < 5; i++) {
+  console.log(`i değişkeninin şu anki değeri: ${i}`);
 }
 ```
 
@@ -527,7 +465,6 @@ for (i = 0; i < 5; i++){
     i değişkeninin şu anki değeri: 2
     i değişkeninin şu anki değeri: 3
     i değişkeninin şu anki değeri: 4
-
 
 ### <a id='toc1_1_5_'></a>[`do...while` Döngüsü](#toc0_)
 
@@ -550,19 +487,17 @@ do {
 
 **Örnek**
 
-
-
-```python
-%%script node
+```javascript
 let i = 0;
 
 // Döngü ilk baş çalıştırılacaktır.
 do {
-    console.log(`i değişkeninin şu anki değeri: ${i}`);
-    i++;
-}
-// Sonrasında döngü koşulu sınanacaktır.
-while (i < 5);
+  console.log(`i değişkeninin şu anki değeri: ${i}`);
+  i++;
+} while (
+  // Sonrasında döngü koşulu sınanacaktır.
+  i < 5
+);
 ```
 
     i değişkeninin şu anki değeri: 0
@@ -571,9 +506,7 @@ while (i < 5);
     i değişkeninin şu anki değeri: 3
     i değişkeninin şu anki değeri: 4
 
-
 **⚠️ `do...while` döngüsü içerisinde koşulu tekrar sınamak için ve döngüye girmek için (iterate denir.) `i` değişkenin syntax'ı ile `i++` ifadesi ile +1 olarak artırıyoruz. Böylece koşul her seferinde `i` değişkenin depoladığı değeri kontrol ediliyor. Şayet `i` değişkeninin değerini artırmasaydık `do...while` döngüsü kısır döngüye girecek ve JavaScript programımızın çökmesine neden olacaktı.**
-
 
 ### <a id='toc1_1_6_'></a>[Döngüde `break` ve `continue` Statement'ların Kullanımı](#toc0_)
 
@@ -585,27 +518,21 @@ Bazen bir döngünün belirli bir koşulu sağlaması durumunda sonlanmasını v
 
 **Örnek**
 
-
-
-```python
-%%script node
+```javascript
 const studentNames = ["Emin", "Murat", "Ömer", "Hasan"];
 
 for (const iterator of studentNames) {
-    
-    // iterator değişkeninin içeriği Ömer olması durumunda döngü sonlanacaktır.
-    if (iterator === "Ömer") {
-        break;
-    }
+  // iterator değişkeninin içeriği Ömer olması durumunda döngü sonlanacaktır.
+  if (iterator === "Ömer") {
+    break;
+  }
 
-     console.log(`Öğrencinin ismi: ${iterator}`);
+  console.log(`Öğrencinin ismi: ${iterator}`);
 }
-
 ```
 
     Öğrencinin ismi: Emin
     Öğrencinin ismi: Murat
-
 
 1. Yukarıdaki örnekte `studentNames` isimli array türündeki değişkenin elementleri `iterator` değişkenine kopyalanıyor.
 
@@ -613,25 +540,20 @@ for (const iterator of studentNames) {
 
 3. Kopyalanan değer konsola yazdırılıyor.
 
-
 Yukarıdaki örneği `continue` statement'ı ile yapmış olsaydık koşulun sağlanması halinde döngü bir kereliğine durdurulacak ve sonra tekrar çalışmaya devam edecekti. Yani "Ömer" değeri konsola yazdırılmayacaktı.
 
 **Örnek**
 
-
-
-```python
-%%script node
+```javascript
 const studentNames = ["Emin", "Murat", "Ömer", "Hasan"];
 
 for (const iterator of studentNames) {
-    
-    // iterator değişkeninin içeriği Ömer olması durumunda döngü sonlanacaktır.
-    if (iterator === "Ömer") {
-        continue;
-    }
-    
-    console.log(`Öğrencinin ismi: ${iterator}`);
+  // iterator değişkeninin içeriği Ömer olması durumunda döngü sonlanacaktır.
+  if (iterator === "Ömer") {
+    continue;
+  }
+
+  console.log(`Öğrencinin ismi: ${iterator}`);
 }
 ```
 
@@ -639,9 +561,7 @@ for (const iterator of studentNames) {
     Öğrencinin ismi: Murat
     Öğrencinin ismi: Hasan
 
-
 **⚠️ `break` ve `continue` statement'ları JavaScript'de blok dışına çıkabilen tek statement türüdür.**
-
 
 ## <a id='toc1_2_'></a>[JavaScript'de Etiketlerin Kullanımı](#toc0_)
 
@@ -651,10 +571,7 @@ Etiketler özellike iç içe döngülerde kullanılır.
 
 **Örnek**
 
-
-
-```python
-%%script node
+```javascript
 // scores adında array veri türü özellikli bir değişken tanımlıyoruz.
 let scores = [];
 
@@ -663,53 +580,50 @@ scores[0] = 5;
 scores[1] = 10;
 scores[2] = 15;
 scores[3] = 20;
-/** scores[4] = 25; 
- * 
- * Array içerisindeki 3. elementi comment'e dönüştürelim. Böylece array içerisinde undefined veri tipine sahip 
+/** scores[4] = 25;
+ *
+ * Array içerisindeki 3. elementi comment'e dönüştürelim. Böylece array içerisinde undefined veri tipine sahip
  * bir empty element oluşacaktır.
  */
 scores[5] = 30;
 
-/** 
- * total değişkeni array elementlerinin toplam sonucunu tutacak. result değişkenini 
+/**
+ * total değişkeni array elementlerinin toplam sonucunu tutacak. result değişkenini
  * döngünün devam ettiğini anlamak için kullanacağız.
  */
-let total = 0, result = false;
+let total = 0,
+  result = false;
 
 // example adında bir label'ımımız var. Bu label if bloğuna denk geliyor.
 example: if (scores.length > 0) {
-
   // score değişkeni içerisindeki tüm elementlere ulaşmak için for döngüsünden faydalanıyoruz.
   for (let i = 0; i < scores.length; i++) {
-    
     /**
      * isNaN() metodu ile scores değişkeni içerisindeki her bir elementin sayısal bir değere sahip olup/olmadığı
      * kontrol ediliyor.
-     * 
-     * Eğer değer sayısal özellikli değilse döngü/koşul sonlanacak ve programı example etiketine denk gelen 
+     *
+     * Eğer değer sayısal özellikli değilse döngü/koşul sonlanacak ve programı example etiketine denk gelen
      * yerden çalışmaya devam ettireceğiz.
      */
     if (isNaN(scores[i])) {
       break example;
-      
-    }
-
-    else {
+    } else {
       total = total + scores[i];
     }
-    
   }
 
   // Döngünün sorunsuz şekilde sonlanması halinde result değişkeninin değerini true olarak belirliyoruz.
   result = true;
 }
 
-result ? console.log(`Toplama işleminin sonucu: ${total}`) : console.log("Toplama işlemi tamamlanamadı. Toplamaya dahil edilmeyen array elementleri var.");
-
+result
+  ? console.log(`Toplama işleminin sonucu: ${total}`)
+  : console.log(
+      "Toplama işlemi tamamlanamadı. Toplamaya dahil edilmeyen array elementleri var."
+    );
 ```
 
     Toplama işlemi tamamlanamadı. Toplamaya dahil edilmeyen array elementleri var.
-
 
 Yukarıda `example` label'ı ile `break` statement'ını birlikte kullandık. `if (isNaN(scores[i]))` koşunun sonucu `true` olması halinde döngü sonlanacak ve program başlangıç noktası olarak `example` label'ına geri döndürülerek **çalışmaya bir sonraki satırdan** devam edecektir.
 
@@ -717,26 +631,19 @@ Bir örnekte `continue` statement'ı için yapalım.
 
 **Örnek**
 
-
-
-```python
-%%script node
+```javascript
 const studentNames = ["Emin", "Murat", "Ömer", "Hasan"];
 
 example: for (let i = 0; i < studentNames.length; i++) {
-    
-    // studentNames element değerlerinden biri Ömer olması halinde döngü 1 kereye mahsus atlanacaktır.
-   if (studentNames[i]=="Ömer") {
-       continue example;
-   } else {
-       console.log(`Elementin şu anki değeri: ${studentNames[i]}`);
-   }
-
-    
+  // studentNames element değerlerinden biri Ömer olması halinde döngü 1 kereye mahsus atlanacaktır.
+  if (studentNames[i] == "Ömer") {
+    continue example;
+  } else {
+    console.log(`Elementin şu anki değeri: ${studentNames[i]}`);
+  }
 }
 ```
 
     Elementin şu anki değeri: Emin
     Elementin şu anki değeri: Murat
     Elementin şu anki değeri: Hasan
-

@@ -11,9 +11,9 @@ In this article, we'll cover:
   - [Map Elements Sorted According to Insertion Order](#toc1_1_4_)
   - [Map Objects Based on Value Equality](#toc1_1_5_)
 - [Commonly Used Methods in the Map Data Type](#toc1_2_)
-  - [`set()` Metodu](#toc1_2_1_)
-  - [`get()` Metodu](#toc1_2_2_)
-  - [`delete()` Metodu](#toc1_2_3_)
+  - [`set()` Method](#toc1_2_1_)
+  - [`get()` Method](#toc1_2_2_)
+  - [`delete()` Method](#toc1_2_3_)
   - [`has()` Method](#toc1_2_4_)
   - [`forEach()` Method](#toc1_2_5_)
   - [`entries()` Method](#toc1_2_6_)
@@ -266,7 +266,7 @@ For Map-like variables, comparing them involves checking if the key-value pairs 
 
 So far, we've covered the concept and features of the Map. Now, let's delve into some of the commonly used methods in Map.
 
-### <a id='toc1_2_1_'></a>[`set()` Metodu](#toc0_)
+### <a id='toc1_2_1_'></a>[`set()` Method](#toc0_)
 
 Used to add a new element to a Map.
 
@@ -293,7 +293,7 @@ Above, we create an empty Map named `student` using the `new Map()` constructor 
 
 We use a `for...of` loop to print the stored elements to the console.
 
-### <a id='toc1_2_2_'></a>[`get()` Metodu](#toc0_)
+### <a id='toc1_2_2_'></a>[`get()` Method](#toc0_)
 
 Returns the value associated with a key in the Map.
 
@@ -335,7 +335,7 @@ for ([key, value] of student) {
     Elements of the 'student' variable: 2 Murat
     Elements of the 'student' variable: 3 Can
 
-### <a id='toc1_2_3_'></a>[`delete()` Metodu](#toc0_)
+### <a id='toc1_2_3_'></a>[`delete()` Method](#toc0_)
 
 Used to delete an element from a Map.
 

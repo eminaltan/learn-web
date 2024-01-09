@@ -18,7 +18,7 @@ In this article, we'll cover:
 
 I hope you enjoy reading.
 
-Yazının Türkçe versiyonu için [linke](tr-js22-try-catch.ipynb) tıklayabilirsiniz.
+Yazının Türkçe versiyonu için [linke](tr-js22-try-catch.md) tıklayabilirsiniz.
 
 <!-- vscode-jupyter-toc-config
 	numbering=false

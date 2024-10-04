@@ -19,7 +19,7 @@ Değineceğim.
 
 İyi okumalar dilerim.
 
-If you want to read English version of this article please visit [this link](js03-variables.ipynb).
+If you want to read English version of this article please visit [this link](js03-variables.md).
 
 <!-- vscode-jupyter-toc-config
 	numbering=false
@@ -29,7 +29,6 @@ If you want to read English version of this article please visit [this link](js0
 	maxLevel=6
 	/vscode-jupyter-toc-config -->
 <!-- THIS CELL WILL BE REPLACED ON TOC UPDATE. DO NOT WRITE YOUR TEXT IN THIS CELL -->
-
 
 ## <a id='toc1_1_'></a>[JavaScript Değişken Kavramı ve Değişken Tanımlama Yöntemleri](#toc0_)
 
@@ -49,11 +48,7 @@ Otomatik olarak tanımlanan değişkenlerin başında bir **keyword bulunmaz.** 
 
 **Örnek**
 
-
-
-```python
-%%script node
-
+```javascript
 x = 4;
 y = 5;
 result = x + y;
@@ -64,11 +59,9 @@ console.log(`Sonuç: ${result}`);
 
     Sonuç: 9
 
-
 **💡 Değişkenleri daima JavaScript dokümanının veya bulunduğu _scope_'un[^1] başında tanımlamak olası problemlerin önüne geçecektir. Buna [JavaScript Hoist](#javascript-hoist) başlığı altında değineceğim.**
 
 **💡 1995-2015 arasında değişken tanımlamak için `var` keyword'ü kullanılırdı, 2015'de değişken tanımlamak için JavaScript'e ek olarak `let` ve `const` keyword'leri de eklenmiştir. Böylece bir dokümanın içeriğine bakarak modern veya eski tarayıcılar için hazırlandığını anlayabiliriz.**
-
 
 ### <a id='toc1_1_1_'></a>[`var`, `let` ve `const` Keyword Kullanım Sıralaması](#toc0_)
 
@@ -83,7 +76,6 @@ console.log(`Sonuç: ${result}`);
 4. `const` keyword'nün kullanılamadığı durumlarda `let` keyword'ü kullanılarak değişken tanımlanması tavsiye edilir.
 
 5. Şayet eski browser'lar için script yazacak isek `var` keyword'ünün kullanılması tavsiye edilir.
-
 
 ## <a id='toc1_2_'></a>[JavaScript Veri Türleri](#toc0_)
 
@@ -101,25 +93,20 @@ var str1 = "Test";
 var str2 = "4";
 
 // str3 numerik string türünde bir değişkendir.
-var str3 = '3';
+var str3 = "3";
 
 // str4 numerik türünde bir değişkendir.
 var str4 = 4;
 
 // str5 string türünde bir değişkendir.
-var str5 = 'Text';
+var str5 = "Text";
 ```
-
 
 Ek olarak bakcticks ` `` ` işaretlerini kullanarak da string özellikli içerikler oluşturabiliriz. Genelde backticks işaretlerini bir değişken ile birlikte kullanırız. Böylece dinamik içerikli ifadeler oluşturabiliriz.
 
 **Örnek**
 
-
-
-```python
-%%script node
-
+```javascript
 var str5 = 8;
 
 // Backticks yardımıyla string bir ifadenin değişken ile birlikte kullanılması.
@@ -127,7 +114,6 @@ console.log(`str5 değişkeninin içeriği: ${str5}`);
 ```
 
     str5 değişkeninin içeriği: 8
-
 
 **⚠️ Numerik özellikli string değerler dışındaki diğer string değerleri matematiksel işlemlerde sonuca katkıda bulunmazlar. Şayet bir string matematiksel ifade içerisinde kullanılırsa işlem sonucunun veri tipi string olacaktır. Bu durum string'in bulunduğu yere göre sonucu etkiler. Numerik özellikli string değerler için durum biraz daha farklıdır. Daha detaylı bilgi almak için [JavaScript Numerik Özellikli String Değerler](tr-js07-numeric-data-type.ipynb#javascript-numerik-özellikli-string-değerler) başlığına bakabilirsiniz.**
 
@@ -137,11 +123,7 @@ console.log(`str5 değişkeninin içeriği: ${str5}`);
 
 **Örnek**
 
-
-
-```python
-%%script node
-
+```javascript
 var x = 4 + 3 + "1";
 
 // Konsola 71 yazdırılacaktır.
@@ -161,16 +143,11 @@ console.log(`Konsola ${y} yazdırılacaktır.`);
     Konsola 143 yazdırılacaktır.
     Konsola 8 yazdırılacaktır.
 
-
 Matematiksel operatörlerden `+` işareti string veri tiplerinde kullanılabilir. Bu durumda string'ler birbirine eklenir. String veri tipleri için `+` işareti **_ekleme operatörü_** olarak isimlendirilir.
 
 **Örnek**
 
-
-
-```python
-%%script node
-
+```javascript
 let x = "Emin" + " " + "Altan";
 
 // Konsola Emin Altan yazdırılacaktır.
@@ -178,7 +155,6 @@ console.log("Konsola " + x + " yazdırılacaktır.");
 ```
 
     Konsola Emin Altan yazdırılacaktır.
-
 
 ## <a id='toc1_3_'></a>[JavaScript'te Değişken Tanımlama](#toc0_)
 
@@ -202,24 +178,20 @@ firstName = "Murat";
 const firstName2 ="Sinan";
 ```
 
-
 **💡 Aynı tipteki değişkenleri tek bir satırda tanımlayabiliriz, bu bize zamandan kazandırır. Bu durumda değişkenler arasına `,` işareti yerleştirilir.**
 
 **Örnek**
 
-
-
-```python
-%%script node
-
-let firstName = "Emin", surname = "Altan", id = 500;
+```javascript
+let firstName = "Emin",
+  surname = "Altan",
+  id = 500;
 
 // Konsola Emin yazdırılacaktır.
 console.log(firstName);
 ```
 
     Emin
-
 
 **❗ JavaScript'te değişken isimleri aslında referans işlevi görür. Yani bir değerin ifade edilmesi için referans olarak kullanılırlar. `const` keyword'ünü bu perspektiften incelediğimizde aslında sabit bir değişken tanımlamak için değil sabit bir değer için referans oluşturmak amacıyla kullanılır. Bu ayrımın anlaşılması object ve array türündeki verilerin `const` keyword'ü ile birlikte kullanılması açısından önemlidir. Bunu bir örnek ile inceleyelim. Yazımın ilerleyen dönemlerinde array ve object türlerine değineceğim.**
 
@@ -242,22 +214,17 @@ console.log(cities[0]);
 cities = ["Tekirdağ", "Samsun", "Sinop"];
 ```
 
-
 ## <a id='toc1_4_'></a>[JavaScript Aynı Değişkenin Tekrar Tanımlanması](#toc0_)
 
 JavaScript'te bir değişken `var` keyword'ü ile tekrar tanımlanabilir. Bu işleme **_re-declaring_** adı verilir. Bu durumdaki değişkene yeni veri atanmadığı sürece depolanmış verisini korur.
 
 **Örnek**
 
-
-
-```python
-%%script node
-
+```javascript
 var firstName = "Emin";
 
 /**
- * firstName değişken deklarasyonu tekrarlanmış. firstName değişkenine yeni bir değer atanmadığı sürece 
+ * firstName değişken deklarasyonu tekrarlanmış. firstName değişkenine yeni bir değer atanmadığı sürece
  * depoladığı bilgiyi koruyacaktır.
  */
 var firstName;
@@ -268,12 +235,13 @@ console.log(`Konsola ${firstName} ifadesi yazdırılır.`);
 firstName = "Murat";
 
 // firstName değişkeninin yeni değeri Murat olacak ve konsola Murat ifadesi yazdırılacaktır.
-console.log(`firstName değişkeninin yeni değeri Murat olacak ve konsola ${firstName} ifadesi yazdırılacaktır.`);
+console.log(
+  `firstName değişkeninin yeni değeri Murat olacak ve konsola ${firstName} ifadesi yazdırılacaktır.`
+);
 ```
 
     Konsola Emin ifadesi yazdırılır.
     firstName değişkeninin yeni değeri Murat olacak ve konsola Murat ifadesi yazdırılacaktır.
-
 
 **⚠️ `let` ve `const` ile tanımlanmış bir değişken tekrar tanımlanamaz. Bir değişkenin tekrar tanımlanabilme özelliği sadece `var` keyword'u için geçerlidir.**
 
@@ -287,16 +255,13 @@ let i = 3;
 console.log(i);
 ```
 
-
 ## <a id='toc1_5_'></a>[JavaScript `$` Simgesinin Kullanılması](#toc0_)
 
 **💡 Genelde `$` simgesi değişken tanımlamak için kullanılmaz. Bir JavaScript kütüphanesi içerisindeki metoda _alias_[^3] vermek için kullanılır. Mesela `$` işareti JQuery kütüphanesindeki tüm `<a>` elementlerini seçmek için kullanılabilir. `$("a")` gibi.**
 
-
 ## <a id='toc1_6_'></a>[JavaScript `_` Simgesinin Kullanılması](#toc0_)
 
 **💡 Genelde JavaScript'te `_`(underscore) işareti bir değişkenin private olduğunu ifade etmek için kullanılır.**
-
 
 ## <a id='toc1_7_'></a>[Block Scope Kavramı](#toc0_)
 
@@ -308,8 +273,8 @@ console.log(i);
 {
   let x = 5;
 
-  /** 
-   * ⚠️ `var` keyword'ü kullanılarak tanımlanmış bir değişkene scope dışarısından (function scope olmamak 
+  /**
+   * ⚠️ `var` keyword'ü kullanılarak tanımlanmış bir değişkene scope dışarısından (function scope olmamak
    * kaydıyla) erişilebilir ve kullanılabilir.
    */
   var y = 10;
@@ -343,13 +308,12 @@ var carName;
 console.log(carName);
 
 /**
- * ❌ let veya const ile tanımlanan değişkenlerde hoist özelliğini kullanılması durumunda ReferenceError hatası 
+ * ❌ let veya const ile tanımlanan değişkenlerde hoist özelliğini kullanılması durumunda ReferenceError hatası
  * ile karşılaşırız.
  */
 model = "Niva";
 let model;
 ```
-
 
 ## <a id='toc1_9_'></a>[Özet](#toc0_)
 
@@ -365,11 +329,9 @@ JavaScript'te hoisting, `var` ile tanımlanan değişkenlerin deklarasyonların�
 
 Bu temel konuların anlaşılması, JavaScript'te daha karmaşık uygulamalar geliştirmek için önemlidir. Veri tipleri, değişken tanımlama yöntemleri ve scope kavramları, kodun daha etkili ve anlaşılır olmasına katkı sağlar.
 
-
 [^1]: Scope bir değişkenin erişebilir ve kullanılabilir olduğu alanı ifade etmek için kullanılan terimdir.
 [^2]: Conditional statement yardımıyla JavaScript'te bir takım çıktılara göre programın akışını değiştirmek isteyebiliriz bu durumda `if, else` veya `else if` gibi ifadelerden faydalanırız. Bunlara conditional statement adı verilir.
 [^3]: JavaScript'te bir değişkeninin içeriği başka bir değişkene kopyalanabilir. Genel olarak bu tanım alias kavramını oluşturur. Alias'lar anlaşılabilir ve semantic kodlar yazmamızı sağlarlar. Örneğin `let x = 5; var aliasVariable = x;` şeklindeki bir ifade de `x` ile `aliasVariable` aynı değeri paylaşırlar. `x` referans olarak ifade edilirken, `aliasVariable` alias olarak ifade edilir.
 [^4]: Bunu bir metafor üzerinden açıklayalım. Matematikte evrensel küme kavramını biliriz. Evrensel küme diğer kümeleri kapsaması gibi JavaScript'te global scope içerisinde tanımlanmış değişken veya metotları (fonksiyonları) kapsar ve script'in her yerinden erişilebilir kılar. Yani global scope burada evrensel küme olarak ifade edilebilir. Bu anlamda geneldirler.
 [^5]: Bir metot (fonksiyon) içerisindeki tanımlanan değişkenleri veya başka metotları ifade eder. Function scope içerisindeki değişkenler dışarıdan erişilip kullanılamaz sadece tanımlandığı scope içerisinde kullanılabilir. Bu anlamda özeldirler.
 [^6]: Hoisting için kullanılan bu kavram, bir değişkenin ulaşılamaz ve kullanılamaz olduğunu ifade etmek için kullanılır. Ta ki değişkeni tanımlandıktan sonra kullanılana kadar.
-

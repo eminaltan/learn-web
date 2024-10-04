@@ -208,7 +208,7 @@ alert("Test");
 
 `console.log()` metodu genelde debug işlemlerinde kullanılır. JavaScript konsolunda çıktı almak için bu metodu kullanılırız. Konsola erişmek için tarayıcının inspector'unu kullanabiliriz.
 
-![Console](https://wd.imgix.net/image/admin/ET1JJFtUIXvaoPCGQ94C.png?auto=format, "Şeklide tarayıcı konsolu görünüyor.")
+![Console](https://i.ibb.co/ZcPdW99/Screenshot-from-2024-10-04-12-01-39.png, "Şeklide tarayıcı konsolu görünüyor.")
 
 **Örnek**
 

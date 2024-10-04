@@ -1,25 +1,25 @@
-# Variables in JavaScript<a id='toc0_'></a>    
+# Variables in JavaScript<a id='toc0_'></a>
 
 Hello friends, in this part of the series, we will cover variables in JavaScript.
 
 In this article, we'll cover:
 
-- [JavaScript Variable Concept and Variable Declaration Methods](#toc1_1_)    
-  - [Usage Order of `var`, `let`, and `const` Keywords](#toc1_1_1_)    
-- [JavaScript Data Types](#toc1_2_)    
-- [Variable Declaration in JavaScript](#toc1_3_)    
-- [Re-Declaration of the Same Variable in JavaScript](#toc1_4_)    
-- [Using the `$` Symbol in JavaScript](#toc1_5_)    
-- [Using the `_` Symbol in JavaScript](#toc1_6_)    
-- [Block Scope Concept](#toc1_7_)    
-- [JavaScript Hoisting](#toc1_8_)    
-- [Summary](#toc1_9_)    
+- [JavaScript Variable Concept and Variable Declaration Methods](#toc1_1_)
+  - [Usage Order of `var`, `let`, and `const` Keywords](#toc1_1_1_)
+- [JavaScript Data Types](#toc1_2_)
+- [Variable Declaration in JavaScript](#toc1_3_)
+- [Re-Declaration of the Same Variable in JavaScript](#toc1_4_)
+- [Using the `$` Symbol in JavaScript](#toc1_5_)
+- [Using the `_` Symbol in JavaScript](#toc1_6_)
+- [Block Scope Concept](#toc1_7_)
+- [JavaScript Hoisting](#toc1_8_)
+- [Summary](#toc1_9_)
 
 I will touch upon.
 
 I hope you enjoy reading.
 
-Yazının Türkçe versiyonu için [linke](tr-js03-variables.ipynb) tıklayabilirsiniz.
+Yazının Türkçe versiyonu için [linke](tr-js03-variables.md) tıklayabilirsiniz.
 
 <!-- vscode-jupyter-toc-config
 	numbering=false
@@ -48,11 +48,7 @@ Automatically declared variables **do not have a keyword at the beginning.** The
 
 **Example**
 
-
-
-```python
-%%script node
-    
+```javascript
 x = 4;
 y = 5;
 result = x + y;
@@ -63,11 +59,9 @@ console.log(`Result: ${result}`);
 
     Result: 9
 
-
 **💡 Always defining variables at the beginning of the JavaScript document or the _scope_[^1] it belongs to will prevent potential issues. I will address this under the title [JavaScript Hoisting](#javascript-hoisting).**
 
 **💡 Between 1995 and 2015, the `var` keyword was used to declare variables. In 2015, the `let` and `const` keywords were introduced to JavaScript for variable declaration. This allows us to determine whether a document is prepared for modern or old browsers by looking at its content.**
-
 
 ### <a id='toc1_1_1_'></a>[Usage Order of `var`, `let`, and `const` Keywords](#toc0_)
 
@@ -82,7 +76,6 @@ console.log(`Result: ${result}`);
 4. In cases where the `const` keyword cannot be used, it is recommended to declare the variable using the `let` keyword.
 
 5. If you are writing a script for older browsers, it is advisable to use the `var` keyword.
-
 
 ## <a id='toc1_2_'></a>[JavaScript Data Types](#toc0_)
 
@@ -100,24 +93,20 @@ var str1 = "Test";
 var str2 = "4";
 
 // str3 is a variable of numeric string type.
-var str3 = '3';
+var str3 = "3";
 
 // str4 is a variable of numeric type.
 var str4 = 4;
 
 // str5 is a variable of string type.
-var str5 = 'Text';
+var str5 = "Text";
 ```
-
 
 **Additionally, we can use backticks or template literals ` `` ` to create string content in JavaScript. Typically, within backticks, we combine both a variable and a string expression, allowing us to create dynamic content.**
 
 **Example**
 
-
-```python
-%%script node
-
+```javascript
 var str5 = 8;
 
 // Utilizing backticks (template literals) to create a string that includes a variable
@@ -125,7 +114,6 @@ console.log(`Content of the str5 variable: ${str5}`);
 ```
 
     Content of the str5 variable: 8
-
 
 **⚠️ Other string values except for numeric-like string values do not contribute to the result in mathematical operations. If a string is used in a mathematical expression, the result will be of string data type. This affects the result based on where the string is used. The situation is somewhat different for numeric-like string values. For more detailed information, you can refer to the section on [JavaScript Numeric-like String Values](js07-numeric-data-type.ipynb#javascript-numeric-string-values).**
 
@@ -135,11 +123,7 @@ console.log(`Content of the str5 variable: ${str5}`);
 
 **Example**
 
-
-
-```python
-%%script node
-
+```javascript
 var x = 4 + 3 + "1";
 
 // "71" will be printed to the console.
@@ -153,35 +137,27 @@ console.log(`The console will print ${y}.`);
 // "8" will be printed to the console.
 y = "9" - 4 + 3;
 console.log(`The console will print ${y}.`);
-
 ```
 
     The console will print 71.
     The console will print 143.
     The console will print 8.
 
-
 The `+` operator from mathematical operators can be used with string data types. In this case, strings are concatenated. The `+` operator for string data types is named the **_concatenation operator_**.
 
 **Example**
 
-
-
-```python
-%%script node
-
+```javascript
 let x = "Emin" + " " + "Altan";
 
-/** 
- * "Emin" and " Altan" will be concatenated, and "Emin Altan" will be printed to the 
+/**
+ * "Emin" and " Altan" will be concatenated, and "Emin Altan" will be printed to the
  * console.
  */
 console.log(`The console will print ${x}.`);
-
 ```
 
     The console will print Emin Altan.
-
 
 ## <a id='toc1_3_'></a>[Variable Declaration in JavaScript](#toc0_)
 
@@ -195,7 +171,7 @@ A variable can be declared without assigning a value to it. In this case, the co
 
 ```javascript
 /**
- * ✔️ We created the variable x without assigning a value. In this case, the content of the variable is 
+ * ✔️ We created the variable x without assigning a value. In this case, the content of the variable is
  * determined as undefined.
  */
 var x;
@@ -208,25 +184,20 @@ firstName = "Murat";
 const firstName2 = "Sinan";
 ```
 
-
 **💡 We can declare variables of the same type in a single line, saving us time. In this case, `,` are placed between variables.**
 
 **Example**
 
-
-
-```python
-%%script node
-
-let firstName = "Emin", surname = "Altan", id = 500;
+```javascript
+let firstName = "Emin",
+  surname = "Altan",
+  id = 500;
 
 // "Emin" will be printed to the console.
-console.log (firstName);
-
+console.log(firstName);
 ```
 
     Emin
-
 
 **❗ In JavaScript, variable names actually serve as references. That is, they are used as references to represent a value. When we look at the `const` keyword from this perspective, it is used not to declare a constant variable but to create a reference for a constant value. Understanding this distinction is important when using the `const` keyword with data types like objects and arrays. I will delve into arrays and objects in the later parts of this writing.**
 
@@ -243,7 +214,7 @@ console.log(cities[0]);
 cities[0] = "İstanbul";
 
 /**
- * We print the first value of the cities reference to the console. In this case, the first value will be 
+ * We print the first value of the cities reference to the console. In this case, the first value will be
  * İstanbul, not Bursa.
  */
 console.log(cities[0]);
@@ -252,22 +223,17 @@ console.log(cities[0]);
 cities = ["Tekirdağ", "Samsun", "Sinop"];
 ```
 
-
 ## <a id='toc1_4_'></a>[Re-Declaration of the Same Variable in JavaScript](#toc0_)
 
 In JavaScript, a variable can be re-declared using the `var` keyword. This process is called **_re-declaring_**. In this case, the variable retains its stored data unless new data is assigned to it.
 
 **Example**
 
-
-
-```python
-%%script node
-
+```javascript
 var firstName = "Emin";
 
 /**
- * The declaration of the firstName variable is repeated. It will retain the stored information unless a new 
+ * The declaration of the firstName variable is repeated. It will retain the stored information unless a new
  * value is assigned to the firstName variable.
  */
 var firstName;
@@ -277,17 +243,17 @@ console.log(`The console will print the expression ${firstName}.`);
 
 firstName = "Murat";
 
-/** 
- * The new value of the firstName variable will be Murat, and the expression "Murat" will be printed to the 
+/**
+ * The new value of the firstName variable will be Murat, and the expression "Murat" will be printed to the
  * console.
  */
-console.log(`The new value of the firstName variable will be Murat, and the console will print the expression ${firstName}.`);
-
+console.log(
+  `The new value of the firstName variable will be Murat, and the console will print the expression ${firstName}.`
+);
 ```
 
     The console will print the expression Emin.
     The new value of the firstName variable will be Murat, and the console will print the expression Murat.
-
 
 **⚠️ A variable declared with `let` and `const` cannot be re-declared. The ability to re-declare a variable is only applicable to the `var` keyword.**
 
@@ -301,16 +267,13 @@ let i = 3;
 console.log(i);
 ```
 
-
 ## <a id='toc1_5_'></a>[Using the `$` Symbol in JavaScript](#toc0_)
 
 **💡 Generally, the `$` symbol is not used to declare variables. It is used to give an _alias_[^3] to a method within a JavaScript library. For example, the `$` sign can be used to select all `<a>` elements in the jQuery library, like `$("a")`.**
 
-
 ## <a id='toc1_6_'></a>[Using the `_` Symbol in JavaScript](#toc0_)
 
 **💡 Generally, the `_` (underscore) symbol is used in JavaScript to indicate that a variable is private.**
-
 
 ## <a id='toc1_7_'></a>[Block Scope Concept](#toc0_)
 
@@ -322,15 +285,15 @@ Before 2015 (ES6), there were two types of scope concepts in JavaScript these ar
 {
   let x = 5;
 
-  /** 
-   * ⚠️ Variables created with the `var` keyword can be accessed and used outside of their scope (except function 
+  /**
+   * ⚠️ Variables created with the `var` keyword can be accessed and used outside of their scope (except function
    * scope).
    */
   var y = 10;
 }
 
 /**
- * ❌ x variable cannot be accessed or used. The console will print the expression "ReferenceError: x is not 
+ * ❌ x variable cannot be accessed or used. The console will print the expression "ReferenceError: x is not
  * defined."
  */
 console.log(x);
@@ -340,7 +303,6 @@ console.log(y);
 ```
 
 **💡 For more information about concept of scope please visit [JavaScript Scope](js23-scope-concept.ipynb) headline.**
-
 
 ## <a id='toc1_8_'></a>[JavaScript Hoisting](#toc0_)
 
@@ -379,11 +341,9 @@ In JavaScript, hoisting refers to the movement of `var` declarations to the top 
 
 Understanding these fundamental concepts is crucial for developing more complex applications in JavaScript. Knowledge of data types, variable declaration methods, and scope concepts contributes to writing more effective and comprehensible code.
 
-
 [^1]: The term "scope" is used to denote the area where a variable is accessible and useable.
 [^2]: In JavaScript, a conditional statement allows us to change the flow of a program based on certain conditions or criteria. In such cases, we make use of expressions like `if`, `else`, or `else if`. These are referred to as conditional statements.
 [^3]: In JavaScript, the content of a variable can be copied to another variable. Generally, this concept forms the basis for the term "alias." Aliases enable us to write understandable and semantic code. For example, in an expression like `let x = 5`; `var aliasVariable = x`;, `x` and `aliasVariable` share the same value. While `x` is referred to as a reference, `aliasVariable` is expressed as an alias.
 [^4]: I will explain this through a metaphor. In mathematics, we are familiar with the concept of a universal set. Similar to how the universal set encompasses other sets, in JavaScript, the global scope encompasses variables or methods (functions) defined within it and makes them accessible from anywhere in the script. Thus, the global scope can be likened to the universal set in this context. In this sense, they are universal.
 [^5]: It refers to the variables or other methods (functions) defined within a method (function). Variables inside the function scope cannot be accessed or used from outside; they can only be used within the scope in which they are defined. In this sense, they are considered private or local to that specific scope.
 [^6]: The concept used for Hoisting is used to express that a variable is unreachable and unusable until it is defined. It remains so until the variable is declared for use.
-
